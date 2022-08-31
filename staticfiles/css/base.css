@@ -1,0 +1,163 @@
+@font-face {
+    font-family: "NeutralFace";
+    src: url("/static/fonts/NeutralFace.otf");
+}
+
+@font-face {
+    font-family: "Charelnk";
+    src: url("/static/fonts/ChareInk.ttf");
+}
+
+@font-face {
+    font-family: "Mariupol";
+    src: url("/static/fonts/Mariupol.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #31080A;
+
+    overflow-x: hidden;
+}
+
+.main-btn {
+    background-color: #335C67;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px;
+    color: white;
+    font-family: "Mariupol";
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+
+    transition: 300ms;
+}
+
+.main-btn:hover {
+    transform: scale(1.1, 1.1);
+    background-color: #BD393A;
+}
+
+.title-section {
+    font-family: 'NeutralFace';
+
+    color: #E09F3E;
+
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 64px;
+
+    text-align: center;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    margin-bottom: 50px;
+}
+
+.title-segment {
+    font-family: 'Charelnk';
+    font-size: 38px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    text-align: center;
+}
+
+.text-section {
+    font-family: "Mariupol";
+
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+.text-link {
+    font-family: 'ChareInk';
+    font-size: 24px;
+    text-decoration-line: underline;
+
+    color: #E09F3E;
+
+    transition: 300ms;
+}
+
+.text-link:hover {
+    color: #335C67;
+}
+
+.main-block {
+    position: absolute;
+    z-index: 10;
+
+    width: 100%;
+    top: calc(100vh - 90px);
+
+    background-color: #31080A;
+}
+
+.main-block__header {
+    background-color: #540B0E;
+    height: 90px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.arrow-down {
+    transform: rotate(45deg);
+}
+
+.arrow {
+    border-width: 0px 10px 10px 0px;
+    border-style: solid;
+    border-color: #3D080A;
+}
+
+.arrow-down__main {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow-down__small {
+    width: 32px;
+    height: 32px;
+}
+
+.main-block__footer {
+    height: 300px;
+    background-color: #3D080A;
+
+    position: relative;
+}
+
+.cat {
+    position: absolute;
+    mix-blend-mode: hard-light;
+    
+    top: -160px;
+    left: 50vw;
+}
+
+footer {
+    padding: 40px;
+}
+
+.text-contact {
+    color: #FFF3B0;
+    margin-bottom: 20px;
+}
+
+.text-focus {
+    color: #E09F3E;
+}
