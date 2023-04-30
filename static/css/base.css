@@ -1,16 +1,16 @@
 @font-face {
     font-family: "NeutralFace";
-    src: url("/static/fonts/NeutralFace.otf");
+    src: url("../fonts/NeutralFace.otf");
 }
 
 @font-face {
     font-family: "Charelnk";
-    src: url("/static/fonts/ChareInk.ttf");
+    src: url("../fonts/ChareInk.ttf");
 }
 
 @font-face {
     font-family: "Mariupol";
-    src: url("/static/fonts/Mariupol.ttf");
+    src: url("../fonts/Mariupol.ttf");
 }
 
 * {
