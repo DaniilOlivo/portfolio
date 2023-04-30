@@ -54,11 +54,9 @@
                             <li>HTML5</li>
                             <li>CSS3</li>
                             <li>JavaScript</li>
-                            <li>JQuery</li>
                             <li>React</li>
                             <li>React Hooks</li>
                             <li>Redux</li>
-                            <li>Webpack</li>
                             <li>Figma</li>
                         </ul>
                     </section>
@@ -139,62 +137,10 @@
             </div>
         </section>
 
-        <section class="project-card">
-            <div class="summary">
-                <h1 class="title-section title-summary">Веб-сервис <br> "Rpg-Calc"</h1>
-                <p class="text-section summary__text">
-                    Хобби-проект с открытым исходным кодом, представляющий из себя веб-сервис для ведения ролевых настольных игр в онлайн формате.
-                    Главным образом задумывался как инструмент для облегчения введения игр, путем автоматизации расчетов и представлении данных в нужном формате.
-                </p>
-                <p class="text-section summary__text">
-                    Проект находиться в активной разработке и дополняется новыми функциями.
-                    Ввиду отсутствия жестких рамок в требованиях, проект ведется в стиле гибкой разработки (agile),
-                     где веб-сервис непосредственно эксплуатируется в текущем виде, после чего формируются новые требования к функционалу, запуская новый цикл разработки.
-                </p>
-                <div class="summary__spacer">
-                    <div class="summary__panel">
-                        <a href="https://rpg-calc.herokuapp.com/" target="_blank" rel="noopener noreferrer" class="main-btn">Перейти на сайт</a>
-                        <a href="https://github.com/DaniilOlivo/rpg-calc" target="_blank" rel="noopener noreferrer" class="text-link summary__link">Код проекта</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-cube">
-                <div class="cube cube_card cube_card_second">
-                    <div class="cube__face cube__face_front">
-                        <h2 class="title-segment card-title">Подробнее</h2>
-                    </div>
-
-                    <div class="cube__face cube__face_aside-left">
-                        <h2 class="title-segment card-title_dark">Технологии</h2>
-                        <p class="text-section summary__text summary__text_additional">
-                            Проект обладает сложной технической стороной в связи со следующими требованиями: обновление сайта «на лету»,
-                             сложная внутренняя игровая логика и большое количество интерактивных элементов на клиенте. 
-                        </p>
-                        <p class="text-section summary__text summary__text_additional">
-                            Чтобы обеспечить обновление на горячую, используется технология WebSocket,
-                             которая позволяет заменить стандартный веб протокол http/https на постоянное TPC/IP соединение,
-                             тем самым позволяя серверу отправлять данные без запроса клиента.
-                            Для реализации использовалась среда NodeJS c Express, к которому подключался сервер WebSocket.
-                            Каждое соединение записывается в журнал и сопоставляется с пользователем из базы данных (PostgreSQL).
-                            После этого любые изменения, произведенные над игровыми данными данного пользователя,
-                             немедленно отобразятся на клиенте без необходимости обновления страницы
-                        </p>
-                        <p class="text-section summary__text summary__text_additional">
-                            Все игровые данные отображаются и изменяются благодаря компонентам фреймворка React, который используется вместе Redux,
-                             позволяя более удобно управлять состоянием веб-сервиса. Обрабатываются же данные в отдельном ядре, написанным на Python,
-                              находящимся за бэкендом веб-сервиса.
-                            Данное архитектурное решение позволяет абстрагировать игровую логику от технических процессов сервера.  
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <footer class="main-block__footer">
             <img src="/static/img/cat.png" alt="Котик" class="cat">
 
-            <h3 class="text-section text-contact">Моя почта: <span class="text-focus">mister.danial.olivo@gmail.com</span></h3>
+            <h3 class="text-section text-contact">Моя почта: <span class="text-focus">kieselev.daniil.web@gmail.com</span></h3>
             <h3 class="text-section text-contact">Мой телефон: <span class="text-focus">8 (915) 235 49 81</span></h3>
             <a href="https://github.com/DaniilOlivo" target="_blank" rel="noopener noreferrer" class="text-link ">
                 <h3 class="text-section text-contact">Профиль GitHub</h3>
