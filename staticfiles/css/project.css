@@ -27,8 +27,10 @@
     transform: translateZ(300px);
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 4em;
 }
 
 .cube__face_aside-left {

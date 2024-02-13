@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/static/css/start.css">
     <link rel="stylesheet" href="/static/css/tech.css">
     <link rel="stylesheet" href="/static/css/project.css">
+    <link rel="stylesheet" href="/static/css/slideshow.css">
     <link rel="shortcut icon" href="/static/ico/favicon.ico" type="image/x-icon">
     <title>Даниил Киселев - Веб-разработчик</title>
 </head>
@@ -103,6 +104,15 @@
             <div class="container-cube">
                 <div class="cube cube_card">
                     <div class="cube__face cube__face_front section_click">
+                        <div class="slideshow">
+                            <img src="/static/img/multi-suvenir/1.png" alt="1" class="slide fade">
+                            <img src="/static/img/multi-suvenir/2.png" alt="2" class="slide fade">
+                            <img src="/static/img/multi-suvenir/3.png" alt="3" class="slide fade">
+                            <img src="/static/img/multi-suvenir/4.png" alt="4" class="slide fade">
+
+                            <a class="slideshow-btn slideshow-btn_prev">&#10094</a>
+                            <a class="slideshow-btn slideshow-btn_next">&#10095</a>
+                        </div>
                         <h2 class="title-segment card-title">Подробнее</h2>
                     </div>
 
@@ -163,6 +173,14 @@
             <div class="container-cube">
                 <div class="cube cube_card">
                     <div class="cube__face cube__face_front section_click">
+                        <div class="slideshow">
+                            <img src="/static/img/artist-references/1.png" alt="1" class="slide fade">
+                            <img src="/static/img/artist-references/2.png" alt="2" class="slide fade">
+                            <img src="/static/img/artist-references/3.png" alt="3" class="slide fade">
+
+                            <a class="slideshow-btn slideshow-btn_prev">&#10094</a>
+                            <a class="slideshow-btn slideshow-btn_next">&#10095</a>
+                        </div>
                         <h2 class="title-segment card-title">Подробнее</h2>
                     </div>
 
@@ -189,6 +207,15 @@
             <div class="container-cube">
                 <div class="cube cube_card">
                     <div class="cube__face cube__face_front section_click">
+                        <div class="slideshow">
+                            <img src="/static/img/monopoly/1.png" alt="1" class="slide fade">
+                            <img src="/static/img/monopoly/2.png" alt="2" class="slide fade">
+                            <img src="/static/img/monopoly/3.png" alt="3" class="slide fade">
+
+                            <a class="slideshow-btn slideshow-btn_prev">&#10094</a>
+                            <a class="slideshow-btn slideshow-btn_next">&#10095</a>
+                        </div>
+
                         <h2 class="title-segment card-title">Подробнее</h2>
                     </div>
 
@@ -231,6 +258,10 @@
             </div>
         </section>
 
+        <div class="modal">
+            <div class="modal__content"></div>
+        </div>
+
         <footer class="main-block__footer" id="contacts">
             <img src="/static/img/cat.png" alt="Котик" class="cat">
 
@@ -245,4 +276,5 @@
 
 <script src="/static/js/base.js"></script>
 <script src="/static/js/cube.js"></script>
+<script src="/static/js/slideshow.js"></script>
 </html>
