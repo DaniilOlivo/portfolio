@@ -43,3 +43,33 @@
 
     padding: 50px 100px;
 }
+
+.btn-contact {
+    display: block;
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: #9E2A2B;
+    opacity: 0.5;
+    transition: 200ms;
+}
+
+.btn-contact::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    border: #FFF3B0 10px solid;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    transform: rotate(45deg);
+}
+
+.btn-contact:hover {
+    opacity: 1;
+}

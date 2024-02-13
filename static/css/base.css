@@ -92,6 +92,10 @@ body {
     color: #335C67;
 }
 
+.section_click {
+    cursor: pointer;
+}
+
 .main-block {
     position: absolute;
     z-index: 10;

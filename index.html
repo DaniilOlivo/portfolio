@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/base.css">
-    <link rel="stylesheet" href="static/css/start.css">
-    <link rel="stylesheet" href="static/css/tech.css">
-    <link rel="stylesheet" href="static/css/project.css">
-    <link rel="shortcut icon" href="static/ico/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/start.css">
+    <link rel="stylesheet" href="/static/css/tech.css">
+    <link rel="stylesheet" href="/static/css/project.css">
+    <link rel="stylesheet" href="/static/css/slideshow.css">
+    <link rel="shortcut icon" href="/static/ico/favicon.ico" type="image/x-icon">
     <title>Даниил Киселев - Веб-разработчик</title>
 </head>
 <body>
@@ -16,9 +17,8 @@
         <div class="start-section__content">
             <h1 class="title-section">Привет, меня зовут Даниил</h1>
             <p class="text-section start-section__text">
-                Я начинающий веб-разработчик, который искренне любит свое дело.
+                Я веб-разработчик, который искренне любит свое дело. Работаю в этой сфере уже более 3 лет, работая так и Backend, так и с Frontend частью.
                 Всегда стремлюсь изучать новые и прогрессивные технологии, многообещающие направления и подходы в разработке веб сайтов.
-                Умею работать с полным стэком веб разработки (backend, frontend, design), но больше предпочитаю и умею в клиентской разработке.
                 Ниже я расскажу о технологиях, с которыми я работал и проектах, которые я успел воплотить
             </p>
         </div>
@@ -27,6 +27,8 @@
         <div class="float-panel">
             <a href="https://github.com/DaniilOlivo" target="_blank" rel="noopener noreferrer" class="text-link">GitHub</a>
         </div>
+
+        <a href="#contacts" class="btn-contact"></a>
     </section>
 
     <main class="main-block">
@@ -41,22 +43,23 @@
         <section class="tech-section">
             <div class="container-cube">
                 <div class="cube cube_left">
-                    <section class="plate plate_front cube_left__front">
+                    <section class="plate plate_front cube_left__front section_click">
                         <div class="plate__container">
                             <h2 class="title-segment cube_left__title">Frontend</h2>
                             <img src="static/img/frontLogo.png" alt="Фронтенд" class="stack-image">
                         </div>
                     </section>
 
-                    <section class="plate plate_aside-left">
-                        <h2 class="title-segment title-list title-list_light">Мои frontend навыки</h2>
+                    <section class="plate plate_aside-left section_click">
+                        <h2 class="title-segment title-list title-list_light">Frontend стэк</h2>
                         <ul class="text-section list-tech list-tech_light">
                             <li>HTML5</li>
                             <li>CSS3</li>
                             <li>JavaScript</li>
                             <li>React</li>
-                            <li>React Hooks</li>
                             <li>Redux</li>
+                            <li>Vue</li>
+                            <li>Vuex</li>
                             <li>Figma</li>
                         </ul>
                     </section>
@@ -65,7 +68,7 @@
     
             <div class="container-cube">
                 <div class="cube cube_right">
-                    <section class="plate plate_front cube_right__front">
+                    <section class="plate plate_front cube_right__front section_click">
                         <div class="plate__container">
                             <h2 class="title-segment cube_right__title">Backend</h2>
                             <div class="logo">
@@ -74,14 +77,16 @@
                         </div>
                     </section>
 
-                    <section class="plate plate_aside-right">
-                        <h2 class="title-segment title-list title-list_dark">Мои backend навыки</h2>
+                    <section class="plate plate_aside-right section_click">
+                        <h2 class="title-segment title-list title-list_dark">Backend стэк</h2>
                         <ul class="text-section list-tech list-tech_dark">
                             <li>Python</li>
                             <li>Django</li>
+                            <li>Flask</li>
                             <li>NodeJS</li>
                             <li>ExpressJS</li>
                             <li>WebSocket</li>
+                            <li>Socket.io</li>
                         </ul>
 
                         <h2 class="title-segment title-list title-list_dark">Помимо бэкенда</h2>
@@ -97,13 +102,22 @@
 
         <section class="project-card">
             <div class="container-cube">
-                <div class="cube cube_card cube_card_first">
-                    <div class="cube__face cube__face_front">
+                <div class="cube cube_card">
+                    <div class="cube__face cube__face_front section_click">
+                        <div class="slideshow">
+                            <img src="/static/img/multi-suvenir/1.png" alt="1" class="slide fade">
+                            <img src="/static/img/multi-suvenir/2.png" alt="2" class="slide fade">
+                            <img src="/static/img/multi-suvenir/3.png" alt="3" class="slide fade">
+                            <img src="/static/img/multi-suvenir/4.png" alt="4" class="slide fade">
+
+                            <a class="slideshow-btn slideshow-btn_prev">&#10094</a>
+                            <a class="slideshow-btn slideshow-btn_next">&#10095</a>
+                        </div>
                         <h2 class="title-segment card-title">Подробнее</h2>
                     </div>
 
-                    <div class="cube__face cube__face_aside-left">
-                        <h2 class="title-segment card-title_dark">Технологии</h2>
+                    <div class="cube__face cube__face_aside-left section_click">
+                        <h2 class="title-segment card-title_dark">Подробности</h2>
                         <p class="text-section summary__text summary__text_additional">
                             Веб-сайт базируется на фреймворке языка Python – Django,
                              с помощью которого реализуется маршрутизация, шаблонизация, административная панель и взаимодействие с базой данных.
@@ -114,7 +128,6 @@
                         <p class="text-section summary__text summary__text_additional">
                             Клиентская часть сайта выполнена на классическом стэке HTML, CSS и JavaScript.
                             Поскольку у сайта, ввиду его специфики, немного динамики, большая часть интерактивных элементов сделана на чистом JS.
-                            Кроме всего перечисленного, также стоит отметить поддержку мобильных устройств посредством медиа запросов CSS
                         </p>
                     </div>
                 </div>
@@ -129,6 +142,9 @@
                     На сайте располагается каталог товаров, контактная информация, а также новостная лента, которая может быть дополнена персоналом,
                      благодаря административной панели сайта. Панель админа также дает возможность добавлять новые товары в каталог и редактировать права пользователей.
                 </p>
+                <p class="text-section summary__text">
+                    Проект имеет поддержку мобильных устройств, подстраиваясь под небольшие экраны телефонов и планшетов
+                </p>
                 <div class="summary__spacer">
                     <div class="summary__panel summary__panel_non-code">
                         <a href="https://minifigurka.ru/" target="_blank" rel="noopener noreferrer" class="main-btn">Перейти на сайт</a>
@@ -137,8 +153,117 @@
             </div>
         </section>
 
-        <footer class="main-block__footer">
-            <img src="static/img/cat.png" alt="Котик" class="cat">
+        <section class="project-card">
+            <div class="summary">
+                <h1 class="title-section title-summary">Сервис "Artist References"</h1>
+                <p class="text-section summary__text">
+                    Сервис для менеджмента графических исходников (референсов) для художественной практики. Некоммерческие личный проект для управления своими работами.
+                </p>
+                <p class="text-section summary__text">
+                    Поддерживает множество пользователей, позволяя добавлять свои изображения на сайт и помечать их специальными тегами,
+                     которые также добавляет пользователь, тем самым формируя свою библиотеку набросков.
+                </p>
+                <div class="summary__spacer">
+                    <div class="summary__panel summary__panel_non-code">
+                        <a href="https://github.com/DaniilOlivo/artist-references" target="_blank" rel="noopener noreferrer" class="btn-code">Код проекта</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-cube">
+                <div class="cube cube_card">
+                    <div class="cube__face cube__face_front section_click">
+                        <div class="slideshow">
+                            <img src="/static/img/artist-references/1.png" alt="1" class="slide fade">
+                            <img src="/static/img/artist-references/2.png" alt="2" class="slide fade">
+                            <img src="/static/img/artist-references/3.png" alt="3" class="slide fade">
+
+                            <a class="slideshow-btn slideshow-btn_prev">&#10094</a>
+                            <a class="slideshow-btn slideshow-btn_next">&#10095</a>
+                        </div>
+                        <h2 class="title-segment card-title">Подробнее</h2>
+                    </div>
+
+                    <div class="cube__face cube__face_aside-left section_click">
+                        <h2 class="title-segment card-title_dark">Подробности</h2>
+                        <p class="text-section summary__text summary__text_additional">
+                            Главная страница дает возможность начать рисовать, выдавая случайный референс по определенному алгоритму. Наиболее часто она будет давать работы,
+                             где были допущены ошибки и с проблемными тегами. Режим выдачи изображений можно изменить, настраивая какие изображения с каким статусом выдавать,
+                              а также с какими тегами.
+                        </p>
+                        <p class="text-section summary__text summary__text_additional">
+                            После работы над референсом, ему выдается статус, который и берется за основу вычисления приоритета выдачи этого изображения.
+                             На странице статистики можно подробно увидеть сколько каких изображений есть в библиотеки пользователя в целом и по каждому отдельному тегу
+                        </p>
+                        <p class="text-section summary__text summary__text_additional">
+                            В будущем планируется добавить подробную и удобную страницу для обзора референсов, а также улучшить систему выдачи изображений, добавив больше возможностей для настроек.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-card">
+            <div class="container-cube">
+                <div class="cube cube_card">
+                    <div class="cube__face cube__face_front section_click">
+                        <div class="slideshow">
+                            <img src="/static/img/monopoly/1.png" alt="1" class="slide fade">
+                            <img src="/static/img/monopoly/2.png" alt="2" class="slide fade">
+                            <img src="/static/img/monopoly/3.png" alt="3" class="slide fade">
+
+                            <a class="slideshow-btn slideshow-btn_prev">&#10094</a>
+                            <a class="slideshow-btn slideshow-btn_next">&#10095</a>
+                        </div>
+
+                        <h2 class="title-segment card-title">Подробнее</h2>
+                    </div>
+
+                    <div class="cube__face cube__face_aside-left section_click">
+                        <h2 class="title-segment card-title_dark">Подробности</h2>
+                        <p class="text-section summary__text summary__text_additional">
+                            Игра использует Socket.io для обновления игры, а также управлением комнатами, где собираются игроки.
+                             Каждый желающий может создать комнату, которую увидят другие, получая возможность подключится.
+                              Для старта игры нужно минимум двое, после чего начинается стандартная монополия. Игроки кидают кубики и ходят по игровому полю,
+                               покупая собственность, которой они могут обмениваться. 
+                        </p>
+                        <p class="text-section summary__text summary__text_additional">
+                            В качестве фротенда был выбран фреймворк Vue, поскольку требовалось обновлять и проверять множество информации на клиенте.
+                             Vue связывается с сервером через веб сокет, посредством socket.io, по которому постоянно получает состояние игры, ее ядро.
+                        </p>
+                        <p class="text-section summary__text summary__text_additional">
+                            Сама реализация и состояние, каждой игры, что привязывается к комнате, хранится на сервере под управлением Express на Node.js.
+                             Сервер берет на себя менеджмент соединений, из идентификацию с соответствующей комнатой, а также управлением состояние игры.
+                              Как только состояние игры обновляется, то сервер рассылает всем ее состояние, обновляя состояние приложения Vue на каждом клиенте.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary">
+                <h1 class="title-section title-summary">Монополия</h1>
+                <p class="text-section summary__text">
+                    Своя собственная реализация известной игры монополии, которая позволяющая вам играть с другими людьми по сети.
+                     Сервис использует технологию веб сокетов, что позволяет ему обновляться в режиме реального времени. 
+                </p>
+                <p class="text-section summary__text">
+                    За основу взяты оригинальные правила и карточки собственности. Кроме самой игры присутствует чат,
+                     который также берет на себя роль логов, записывая все события, что происходят в игре.
+                </p>
+                <div class="summary__spacer">
+                    <div class="summary__panel summary__panel_non-code">
+                        <a href="https://github.com/DaniilOlivo/monopoly" target="_blank" rel="noopener noreferrer" class="btn-code">Код проекта</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal">
+            <div class="modal__content"></div>
+        </div>
+
+        <footer class="main-block__footer" id="contacts">
+            <img src="/static/img/cat.png" alt="Котик" class="cat">
 
             <h3 class="text-section text-contact">Моя почта: <span class="text-focus">kieselev.daniil.web@gmail.com</span></h3>
             <h3 class="text-section text-contact">Мой телефон: <span class="text-focus">8 (915) 235 49 81</span></h3>
@@ -149,6 +274,7 @@
     </main>
 </body>
 
-<script src="static/js/base.js"></script>
-<script src="static/js/cube.js"></script>
+<script src="/static/js/base.js"></script>
+<script src="/static/js/cube.js"></script>
+<script src="/static/js/slideshow.js"></script>
 </html>

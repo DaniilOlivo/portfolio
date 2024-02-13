@@ -1,16 +1,37 @@
-function initRotateCube(selCube, selFirstSide, selSecondSide, classTurn) {
-    let cube = document.querySelector(selCube)
-    let firstSide = document.querySelector(selFirstSide)
-    let secondSide = document.querySelector(selSecondSide)
-
-    let slideFunc = () => cube.classList.toggle(classTurn)
-
+function initRotateCube(cube, firstSide, secondSide, classTurn) {
+    const slideFunc = () => cube.classList.toggle(classTurn)
     firstSide.addEventListener("click", slideFunc)
     secondSide.addEventListener("click", slideFunc)
 }
 
-initRotateCube(".cube_left", ".cube_left .plate_front", ".cube_left .plate_aside-left", "cube_tunred-right")
-initRotateCube(".cube_right", ".cube_right .plate_front", ".cube_right .plate_aside-right", "cube_tunred-left")
+function initRotateCubeSelectors(selCube, selFirstSide, selSecondSide, classTurn) {
+    let cube = document.querySelector(selCube)
+    let firstSide = document.querySelector(selFirstSide)
+    let secondSide = document.querySelector(selSecondSide)
 
-initRotateCube(".cube_card_first", ".cube_card_first .cube__face_front", ".cube_card_first .cube__face_aside-left", "cube_card_turn-right")
-initRotateCube(".cube_card_second", ".cube_card_second .cube__face_front", ".cube_card_second .cube__face_aside-left", "cube_card_turn-right")
+    initRotateCube(cube, firstSide, secondSide, classTurn)
+}
+
+function initCubes() {
+    initRotateCubeSelectors(
+        ".cube_left",
+        ".cube_left .plate_front",
+        ".cube_left .plate_aside-left", 
+        "cube_tunred-right"
+    )
+    initRotateCubeSelectors(
+        ".cube_right",
+        ".cube_right .plate_front",
+        ".cube_right .plate_aside-right",
+        "cube_tunred-left"
+    )
+
+    const cubesCards = document.querySelectorAll(".cube_card")
+    for (const cube of cubesCards) {
+        const firstSide = cube.querySelector(".cube__face_front")
+        const secondSide = cube.querySelector(".cube__face_aside-left")
+        initRotateCube(cube, firstSide, secondSide, "cube_card_turn-right")
+    }
+}
+
+initCubes()

@@ -27,8 +27,10 @@
     transform: translateZ(300px);
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 4em;
 }
 
 .cube__face_aside-left {
@@ -97,4 +99,19 @@
 .summary__link {
     font-size: 20px;
     color: #540B0E;
+}
+
+.btn-code {
+    font-size: 24px;
+    color: #540B0E;
+    text-decoration: none;
+    border-bottom: #540B0E 2px solid;
+    font-family: "Charelnk";
+    transition: 200ms;
+}
+
+.btn-code:hover {
+    color: #E09F3E;
+    border-bottom-color: #E09F3E;
+    transform: scale(1.1, 1.1);
 }
