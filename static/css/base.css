@@ -1,0 +1,118 @@
+:root {
+    --color-bg: #242423;
+    --color-bg-additional: #333533;
+    --color-accent: #F5CB5C;
+    --color-text: #E8EDDF;
+    --color-light: #CFDBD5;
+}
+
+@font-face {
+    font-family: "MadeTitle";
+    src: url("/static/fonts/MADE.otf");
+}
+
+@font-face {
+    font-family: "Moderustic";
+    src: url("/static/fonts/Moderustic.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text);
+    transition: 300ms;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-size: 16px;
+    font-family: "Moderustic";
+}
+
+.title {
+    font-family: "MadeTitle";
+    font-size: 24px;
+}
+
+.title_logo {
+    letter-spacing: 0.06em;
+    font-size: 32px;
+}
+
+.title_sub {
+    font-size: 20px;
+}
+
+.text-accent {
+    font-style: italic;
+}
+
+.btn {
+    font-family: "MadeTitle";
+    font-size: 20px;
+    background: transparent;
+    border: var(--color-light) 2px solid;
+    border-radius: 14px;
+    padding: 1.2em 4em;
+    color: var(--color-text);
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: var(--color-bg);
+    background-color: var(--color-light);
+}
+
+.btn:active {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.top-menu {
+    width: 850px;
+    border-bottom: var(--color-light) 2px solid;
+    display: flex;
+    justify-content: space-around;
+}
+
+.top-menu__btn {
+    padding: 24px;
+}
+
+.top-menu__select {
+    display: none;
+}
+
+.top-menu__btn_active {
+    color: var(--color-accent);
+    position: relative;
+}
+
+.top-menu__btn_bookmark {
+    position: absolute;
+    width: 68px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 0;
+}
+
+.github-ico {
+    position: fixed;
+    right: 90px;
+    bottom: 70px;
+}
