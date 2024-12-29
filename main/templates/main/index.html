@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/main/css/index.css">
+{% endblock css %}
+
+{% block title %}Даниил Киселев - Веб-разработчик{% endblock title %}
+
+{% block content %}
+    <div class="index-content">
+        <div class="about-title">
+            <h1 class="title title_logo">
+                Привет, меня зовут <span>Даниил</span>!
+            </h1>
+            
+            <h1 class="title title_logo">
+                Я <span>fullstack</span> разработчик
+            </h1>
+        </div>
+
+        <div class="card">
+            <div class="block block_image">
+                {{ about.text }}
+            </div>
+            
+            {% if about.photo %}
+                <img src="{{ about.photo.url }}" alt="avatar" class="block-image">
+            {% endif %}
+        </div>
+
+        {% if about.resume %}
+            <div class="panel-btns">
+                <a href="{{ about.resume.url }}" class="btn" dowland>Скачать резюме</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock content %}

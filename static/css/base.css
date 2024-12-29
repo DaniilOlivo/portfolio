@@ -43,6 +43,7 @@ main {
 .title {
     font-family: "MadeTitle";
     font-size: 24px;
+    font-weight: normal;
 }
 
 .title_logo {
@@ -116,7 +117,37 @@ main {
     height: 0;
 }
 
-.github-ico {
+.card {
+    display: flex;
+    align-items: center;
+}
+
+.block {
+    background-color: var(--color-bg-additional);
+    border-radius: 12px;
+    padding: 40px 55px;
+    max-width: 670px;
+    box-shadow: 0px 5px 5px -5px black;
+}
+
+.block_image {
+    padding-right: 150px;
+}
+
+.block-image {
+    border-radius: 50%;
+    width: 390px;
+    height: 390px;
+    box-shadow: 0px 5px 5px -5px black;
+    margin-left: -130px;
+}
+
+.panel-btns {
+    display: flex;
+    margin-top: -20px;
+}
+
+.link-github {
     position: fixed;
     right: 90px;
     bottom: 70px;

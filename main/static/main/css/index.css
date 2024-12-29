@@ -1,0 +1,17 @@
+.index-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -160px;
+}
+
+.about-title {
+    align-self: center;
+    margin-left: -150px;
+    margin-bottom: -60px;
+}
+
+.about-title span {
+    color: var(--color-accent);
+}
