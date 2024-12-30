@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/static/main/css/portfolio.css">
+{% endblock css %}
+
+{% block title %}Даниил Киселев - Веб-разработчик. Портфолио{% endblock title %}
+
+{% block content %}
+    <div class="portfolio-content">
+        {% for project in projects %}
+            <div class="project">
+                <div class="project-info">
+                    <div class="project-desc">
+                        <h2 class="title">{{ project.title }}</h2>
+                        <span class="project-desc__line"></span>
+                        <p class="project-desc__text">{{ project.desc }}</p>
+                    </div>
+
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            {% for image in project.images.all %}
+                                <img src="{{ image.file.url }}" alt="image.title" class="swiper-slide">
+                            {% endfor %}
+                        </div>
+
+                        <div class="swiper-pagination"></div>
+                    
+                        <div class="swiper-button-prev swiper-btn"></div>
+                        <div class="swiper-button-next swiper-btn"></div>
+                    </div>
+                </div>
+
+                <div class="project-btns">
+                    {% if project.link_github %}
+                        <a href="{{ project.link_github }}" class="btn" target="_blank">
+                            Код
+                        </a>
+                    {% endif %}
+
+                    {% if project.link_site %}
+                        <a href="{{ project.link_site }}" class="btn" target="_blank">
+                            Открыть сайт
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/static/main/js/gallery.js"></script>
+{% endblock js %}

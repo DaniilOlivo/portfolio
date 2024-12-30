@@ -12,9 +12,9 @@
     <div class="wrap">
         <nav class="top-menu">
             <span class="top-menu__select">{{ current_page }}</span>
-            <a href="" class="top-menu__btn title" id="about">Обо мне</a>
+            <a href="{% url "index" %}" class="top-menu__btn title" id="about">Обо мне</a>
             <a href="" class="top-menu__btn title" id="tech">Технологии</a>
-            <a href="" class="top-menu__btn title" id="portfolio">Работы</a>
+            <a href="{% url "portfolio" %}" class="top-menu__btn title" id="portfolio">Работы</a>
             <a href="" class="top-menu__btn title" id="contacts">Контакты</a>
         </nav>
 

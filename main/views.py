@@ -1,5 +1,5 @@
-from django.views.generic import TemplateView
-from main.models import About
+from django.views.generic import TemplateView, ListView
+from main.models import About, Project
 
 class PageMixin:
     github_link = True
@@ -25,3 +25,8 @@ class IndexView (PageMixin, TemplateView):
         context["about"] = about
         return context
     
+class PortfolioView (PageMixin, ListView):
+    template_name = "main/portfolio.html"
+    id_page = "portfolio"
+    model = Project
+    context_object_name = "projects"
