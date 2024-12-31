@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/main/css/contacts.css">
+{% endblock css %}
+
+{% block title %}Даниил Киселев - Веб-разработчик. Контакты{% endblock title %}
+
+{% block content %}
+    <div class="contacts-content">
+        <img src="/static/main/img/cat.png" alt="cat" class="cat">
+
+        <div class="block block_contacts">
+            <div class="block-row">
+                <img src="/static/main/img/phone_ico.png" alt="phone" class="contacts-ico phone-ico">
+                <a href="tel:+89152354981" class="contacts-link title title_sub">
+                    +8 915 235 49 81
+                </a>
+            </div>
+
+            <div class="block-row">
+                <img src="/static/main/img/mail_ico.png" alt="mail" class="contacts-ico">
+                <a href="mailto:kiselev.daniil.web@gmail.com" class="contacts-link title title_sub">
+                    kiselev.daniil.web@gmail.com
+                </a>
+            </div>
+            
+            <div class="block-row">
+                <img src="/static/img/github_ico.png" alt="github" class="contacts-ico">
+                <a href="https://github.com/DaniilOlivo"
+                    class="contacts-link contacts-link_github title title_sub"
+                    target="_blank">
+                    DaniilOlivo
+                    <img src="/static/main/img/arrow_ico.png" alt="arrow" class="arrow-link">
+                </a>
+            </div>
+
+            <div class="paw"></div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script src="/static/main/js/contacts.js"></script>
+{% endblock js %}

@@ -24,9 +24,16 @@ class IndexView (PageMixin, TemplateView):
             about = records_db[0]
         context["about"] = about
         return context
-    
+
+
 class PortfolioView (PageMixin, ListView):
     template_name = "main/portfolio.html"
     id_page = "portfolio"
     model = Project
     context_object_name = "projects"
+
+
+class ContactsView (PageMixin, TemplateView):
+    template_name = "main/contacts.html"
+    id_page = "contacts"
+    github_link = False
