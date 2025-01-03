@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/main/css/tech.css">
+{% endblock css %}
+
+{% block title %}Даниил Киселев - Веб-разработчик. Технологии{% endblock title %}
+
+{% block content %}
+    <div class="tech-content">
+        {% for tech in techs %}
+            <div class="tech card">
+                <div class="block block_image block-badges block-tech">
+                    <h3 class="title">{{ tech.title }}</h3>
+                    <div class="badges">
+                        {% for badge in tech.badges.all %}
+                            <img src="{{ badge.link }}" alt="{{ badge.title }}" class="badge">
+                        {% endfor %}
+                    </div>
+                    <button class="title title_sub btn-detail btn-detail_show">
+                        Подробнее
+                        <img src="/static/img/arrow_ico.png" alt="arrow" class="arrow-link">
+                    </button>
+                </div>
+
+                <img
+                    src="{{ tech.image.file.url }}"
+                    alt="{{ tech.image.title }}"
+                    class="block-image image-tech">
+
+
+                <div class="block block_image block-tech block-detail block-tech_hide">
+                    <h3 class="title">{{ tech.title }}</h3>
+                    <p class="block-tech__detail">{{ tech.detail }}</p>
+                    <button class="title title_sub btn-detail btn-detail_hide">
+                        <img src="/static/img/arrow_ico.png" alt="arrow" class="arrow-link arrow-link_reverse">
+                        Скрыть
+                    </button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script src="/static/main/js/tech.js"></script>
+{% endblock js %}

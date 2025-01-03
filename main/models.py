@@ -43,3 +43,29 @@ class Project (models.Model):
     class Meta:
         verbose_name = "Проект"
         verbose_name_plural = "Проекты"
+
+
+class Badge (models.Model):
+    title = models.CharField("Название", max_length=40)
+    link = models.URLField("Ссылка на значок")
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = "Значок"
+        verbose_name_plural = "Значки"
+
+
+class Tech (models.Model):
+    title = models.CharField("Название группы", max_length=40)
+    image = models.ForeignKey(Image, verbose_name="Изображение", on_delete=models.PROTECT)
+    badges = models.ManyToManyField(Badge, verbose_name="Значки технологий")
+    detail = models.TextField("Подробности")
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = "Блок технологий"
+        verbose_name_plural = "Блоки технологий"

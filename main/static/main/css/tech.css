@@ -1,0 +1,48 @@
+.tech-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+    gap: 50px;
+}
+
+.badges {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.block-tech {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 550px;
+    height: 240px;
+    overflow: hidden;
+}
+
+.block-tech_hide {
+    width: 0;
+    padding: 40px 0;
+}
+
+.block-tech__detail {
+    flex-grow: 1;
+}
+
+.image-tech {
+    width: 312px;
+    height: 312px;
+}
+
+.btn-detail {
+    border: none;
+    background-color: transparent;
+    color: var(--color-text);
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
