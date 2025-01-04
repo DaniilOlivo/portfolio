@@ -19,12 +19,12 @@
         </div>
 
         <div class="card">
-            <div class="block block_image">
+            <div class="block block_image-right">
                 {{ about.text }}
             </div>
             
             {% if about.photo %}
-                <img src="{{ about.photo.url }}" alt="avatar" class="block-image">
+                <img src="{{ about.photo.url }}" alt="avatar" class="card__image card__image_right">
             {% endif %}
         </div>
 

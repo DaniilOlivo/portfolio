@@ -1,0 +1,28 @@
+.top-menu {
+    width: 850px;
+    border-bottom: var(--color-light) 2px solid;
+    display: flex;
+    justify-content: space-around;
+}
+
+.top-menu__btn {
+    padding: 24px;
+}
+
+.top-menu__select {
+    display: none;
+}
+
+.top-menu__btn_active {
+    color: var(--color-accent);
+    position: relative;
+}
+
+.top-menu__btn_bookmark {
+    position: absolute;
+    width: 68px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 0;
+}

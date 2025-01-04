@@ -5,6 +5,10 @@
     gap: 50px;
 }
 
+.title-tech {
+    text-align: center;
+}
+
 .badges {
     display: flex;
     align-items: flex-start;
@@ -20,6 +24,7 @@
     width: 550px;
     height: 240px;
     overflow: hidden;
+    padding-top: 20px;
 }
 
 .block-tech_hide {
@@ -31,11 +36,6 @@
     flex-grow: 1;
 }
 
-.image-tech {
-    width: 312px;
-    height: 312px;
-}
-
 .btn-detail {
     border: none;
     background-color: transparent;
@@ -45,4 +45,17 @@
     align-items: center;
     gap: 5px;
     cursor: pointer;
+}
+
+.btn-detail_right {
+    align-self: flex-end;
+}
+
+.btn-detail_left {
+    align-self: flex-start;
+    flex-direction: row-reverse;
+}
+
+.arrow-link_reverse {
+    transform: rotate(180deg);
 }

@@ -9,31 +9,36 @@
 {% block content %}
     <div class="tech-content">
         {% for tech in techs %}
-            <div class="tech card">
-                <div class="block block_image block-badges block-tech">
-                    <h3 class="title">{{ tech.title }}</h3>
+            <div class="tech card {% cycle '' 'card_reverse' %}">
+                <div class="block block_image-{% cycle 'right' 'left' %} block-badges block-tech">
+                    <h3 class="title title-tech">{{ tech.title }}</h3>
                     <div class="badges">
                         {% for badge in tech.badges.all %}
                             <img src="{{ badge.link }}" alt="{{ badge.title }}" class="badge">
                         {% endfor %}
                     </div>
-                    <button class="title title_sub btn-detail btn-detail_show">
+                    <button class="title title_sub btn-detail btn-detail_{% cycle 'right' 'left' %} btn-detail_show">
                         Подробнее
-                        <img src="/static/img/arrow_ico.png" alt="arrow" class="arrow-link">
+                        <img
+                            src="/static/img/arrow_ico.png"
+                            alt="arrow"
+                            class="arrow-link arrow-link_{% cycle '' 'reverse' %}">
                     </button>
                 </div>
 
                 <img
                     src="{{ tech.image.file.url }}"
                     alt="{{ tech.image.title }}"
-                    class="block-image image-tech">
+                    class="card__image card__image_small card__image_{% cycle 'right' 'left' %}">
 
-
-                <div class="block block_image block-tech block-detail block-tech_hide">
-                    <h3 class="title">{{ tech.title }}</h3>
+                <div class="block block_image-{% cycle 'left' 'right' %} block-detail block-tech block-tech_hide">
+                    <h3 class="title title-tech">{{ tech.title }}</h3>
                     <p class="block-tech__detail">{{ tech.detail }}</p>
-                    <button class="title title_sub btn-detail btn-detail_hide">
-                        <img src="/static/img/arrow_ico.png" alt="arrow" class="arrow-link arrow-link_reverse">
+                    <button class="title title_sub btn-detail btn-detail_{% cycle 'left' 'right' %} btn-detail_hide">
+                        <img
+                            src="/static/img/arrow_ico.png"
+                            alt="arrow"
+                            class="arrow-link arrow-link_{% cycle 'reverse' '' %}">
                         Скрыть
                     </button>
                 </div>

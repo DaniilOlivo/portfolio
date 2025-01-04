@@ -15,3 +15,8 @@
 .about-title span {
     color: var(--color-accent);
 }
+
+.panel-btns {
+    display: flex;
+    margin-top: -20px;
+}
