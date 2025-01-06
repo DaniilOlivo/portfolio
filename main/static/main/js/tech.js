@@ -15,20 +15,6 @@ function initTech() {
         const blockDetail = card.querySelector(selBlockDetail)
         const image = card.querySelector(selImage)
 
-        const createAnimSlide = (fromBlock, toBlock) => {
-            const tl = gsap.timeline()
-            tl.to(fromBlock.querySelector(selContent), {
-                opacity: 0,
-                duration: 0.2
-            }).to(fromBlock, {
-                width: 0,
-                duration: 0.3,
-                //padding: "40px 0"
-            }).to(toBlock, {
-
-            })
-        }
-
         const isReverse = card.classList.contains("card_reverse")
 
         const tl = gsap.timeline()
@@ -37,10 +23,12 @@ function initTech() {
             duration: 0.2
         }).to(blockBadges, {
             width: 0,
+            opacity: 0,
             duration: 0.3,
             padding: "40px 0"
         }).to(blockDetail, {
             width: 550,
+            opacity: 1,
             duration: 0.3,
             paddingRight: isReverse ? 150 : 40,
             paddingLeft: isReverse ? 40 : 150

@@ -7,6 +7,13 @@
 
 .top-menu__btn {
     padding: 24px;
+    transition: 300ms;
+}
+
+.top-menu__btn:hover {
+    background-color: var(--color-light);
+    color: var(--color-bg);
+    border-radius: 30px 30px 0 0;
 }
 
 .top-menu__select {
@@ -16,6 +23,11 @@
 .top-menu__btn_active {
     color: var(--color-accent);
     position: relative;
+}
+
+.top-menu__btn_active:hover {
+    background-color: transparent;
+    color: var(--color-accent);
 }
 
 .top-menu__btn_bookmark {

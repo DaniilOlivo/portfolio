@@ -12,10 +12,12 @@
             <div class="tech card {% cycle '' 'card_reverse' %}">
                 <div class="block block_image-{% cycle 'right' 'left' %} block-badges block-tech">
                     <h3 class="title title-tech">{{ tech.title }}</h3>
-                    <div class="badges block-content">
-                        {% for badge in tech.badges.all %}
-                            <img src="{{ badge.link }}" alt="{{ badge.title }}" class="badge">
-                        {% endfor %}
+                    <div class="block-content">
+                        <div class="badges">
+                            {% for badge in tech.badges.all %}
+                                <img src="{{ badge.link }}" alt="{{ badge.title }}" class="badge">
+                            {% endfor %}
+                        </div>
                     </div>
                     <button class="title title_sub btn-detail btn-detail_{% cycle 'right' 'left' %} btn-detail_show">
                         Подробнее

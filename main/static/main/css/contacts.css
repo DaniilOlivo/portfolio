@@ -29,6 +29,12 @@
 .contacts-link {
     flex-grow: 1;
     text-align: center;
+    transition: 300ms;
+}
+
+.contacts-link:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
 }
 
 .contacts-link_github {

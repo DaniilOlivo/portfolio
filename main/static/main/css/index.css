@@ -3,13 +3,17 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 160px;
+    margin-bottom: 50px;
 }
 
 .about-title {
     align-self: center;
     margin-left: -150px;
     margin-bottom: -60px;
+}
+
+.about-title__title:first-child {
+    margin-left: -30px;
 }
 
 .about-title span {

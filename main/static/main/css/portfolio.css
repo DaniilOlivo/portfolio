@@ -1,8 +1,8 @@
 .portfolio-content {
     display: flex;
     flex-direction: column;
-    margin-top: 150px;
-    gap: 200px;
+    margin: 150px 0;
+    gap: 170px;
 }
 
 .project {
