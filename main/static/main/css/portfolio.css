@@ -14,8 +14,8 @@
     display: flex;
 }
 
-.project:nth-child(even) .project-info {
-    flex-direction: row-reverse;   
+.project-info_reverse {
+    flex-direction: row-reverse;
 }
 
 .project-desc {
@@ -27,12 +27,12 @@
     gap: 1em;
 }
 
-.project:nth-child(odd) .project-desc {
+.project-desc_border-right {
     padding-right: 45px;
     border-right: var(--color-light) solid 3px;
 }
 
-.project:nth-child(even) .project-desc {
+.project-desc_border-left {
     padding-left: 45px;
     border-left: var(--color-light) solid 3px;
 }
@@ -54,11 +54,11 @@
     margin: 40px;
 }
 
-.project:nth-child(odd) .swiper {
+.swiper_right {
     margin-right: 0;
 }
 
-.project:nth-child(even) .swiper {
+.swiper_left {
     margin-left: 0;
 }
 

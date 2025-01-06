@@ -11,14 +11,14 @@
     <div class="portfolio-content">
         {% for project in projects %}
             <div class="project">
-                <div class="project-info">
-                    <div class="project-desc">
+                <div class="project-info {% cycle '' 'project-info_reverse' %}">
+                    <div class="project-desc {% cycle 'project-desc_border-right' 'project-desc_border-left' %}">
                         <h2 class="title">{{ project.title }}</h2>
                         <span class="project-desc__line"></span>
                         <p class="project-desc__text">{{ project.desc }}</p>
                     </div>
 
-                    <div class="swiper">
+                    <div class="swiper {% cycle 'swiper_right' 'swiper_left' %}">
                         <div class="swiper-wrapper">
                             {% for image in project.images.all %}
                                 <img src="{{ image.file.url }}" alt="image.title" class="swiper-slide">
