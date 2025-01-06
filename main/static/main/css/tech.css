@@ -34,6 +34,7 @@
 
 .block-tech__detail {
     flex-grow: 1;
+    opacity: 0;
 }
 
 .btn-detail {
