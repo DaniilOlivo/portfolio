@@ -11,19 +11,26 @@
 {% block content %}
     <div class="dashboard-content">
         <div class="panel-dashboard">
-            <form>
-                
+            <form class="form-dashboard">
+                {% csrf_token %}
+                <label for="period-input">Период:</label>
+                <select name="period" id="period-input">
+                    <option value="all-time">Все время</option>
+                    <option value="year">Год</option>
+                    <option value="half-year">Полгода</option>
+                    <option value="month">Месяц</option>
+                </select>
             </form>
 
             <div class="stat-block block">
                 <h3 class="title title-sub">
                     Количество посещений:
-                    <span class="stat-block__number">{{ count }}</span>
+                    <span class="stat-block__number stat-block__count"></span>
                 </h3>
                 
                 <h3 class="title title-sub">
                     Среднее время на сайте:
-                    <span class="stat-block__number">{{ average }}</span>
+                    <span class="stat-block__number stat-block__average"></span>
                 </h3>
             </div>
         </div>
