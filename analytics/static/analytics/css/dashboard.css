@@ -1,0 +1,23 @@
+.dashboard-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.panel-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.stat-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.stat-block__number {
+    color: var(--color-accent);
+}

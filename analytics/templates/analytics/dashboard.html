@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/analytics/css/dashboard.css">
+{% endblock css %}
+
+{% block title %}
+    Даниил Киселев - Веб-разработчик. Аналитика
+{% endblock title %}
+
+{% block content %}
+    <div class="dashboard-content">
+        <div class="panel-dashboard">
+            <form>
+                
+            </form>
+
+            <div class="stat-block block">
+                <h3 class="title title-sub">
+                    Количество посещений:
+                    <span class="stat-block__number">{{ count }}</span>
+                </h3>
+                
+                <h3 class="title title-sub">
+                    Среднее время на сайте:
+                    <span class="stat-block__number">{{ average }}</span>
+                </h3>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/analytics/js/dashboard.js"></script>
+{% endblock js %}
