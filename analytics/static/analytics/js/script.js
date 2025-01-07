@@ -11,7 +11,7 @@ function initAnalytics() {
 
             const token = document.querySelector("input[name='csrfmiddlewaretoken']").value
 
-            const res = await fetch("analytics/time/", {
+            const res = await fetch("/analytics/time/", {
                 method: "POST",
                 headers: {
                     'X-CSRFToken': token,
