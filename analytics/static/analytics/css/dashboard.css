@@ -41,3 +41,8 @@
     font-family: "Moderustic";
     cursor: pointer;
 }
+
+.container-chart {
+    width: 500px;
+    height: 300px;
+}
