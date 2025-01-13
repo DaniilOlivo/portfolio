@@ -27,7 +27,7 @@ function initTech() {
             duration: 0.3,
             padding: "40px 0"
         }).to(blockDetail, {
-            width: 550,
+            width: 650,
             opacity: 1,
             duration: 0.3,
             paddingRight: isReverse ? 150 : 40,

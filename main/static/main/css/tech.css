@@ -1,10 +1,20 @@
 .tech-content {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    align-items: center;
     margin-top: 100px;
+    margin-bottom: 100px;
     gap: 50px;
-    height: 80vh;
+}
+
+.tech {
+    margin-left: 260px ;
+    margin-right: 0;
+}
+
+.tech_reverse {
+    margin-left: 0;
+    margin-right: 260px;
 }
 
 .title-tech {
@@ -39,7 +49,7 @@
 
 .block-tech_hide {
     width: 0;
-    padding: 40px 0;
+    padding: 20px 0 40px;
 }
 
 .block-tech__detail {
