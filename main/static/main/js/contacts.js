@@ -28,7 +28,8 @@ function animateCat() {
     }).to(selPaw, {
         height: 0
     }).to(selCat, {
-        top: 30
+        top: 30,
+        onComplete: () => document.querySelector(selPhone).style.display = "none"
     }).pause()
 
 
