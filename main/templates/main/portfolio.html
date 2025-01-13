@@ -18,17 +18,19 @@
                         <p class="project-desc__text">{{ project.desc }}</p>
                     </div>
 
-                    <div class="swiper {% cycle 'swiper_right' 'swiper_left' %}">
-                        <div class="swiper-wrapper">
-                            {% for image in project.images.all %}
-                                <img src="{{ image.file.url }}" alt="image.title" class="swiper-slide">
-                            {% endfor %}
+                    <div class="gallery {% cycle 'gallery_right' 'gallery_left' %}">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                {% for image in project.images.all %}
+                                    <img src="{{ image.file.url }}" alt="image.title" class="swiper-slide gallery-image">
+                                {% endfor %}
+                            </div>
+    
+                            <div class="swiper-pagination"></div>
+                        
+                            <div class="swiper-button-prev swiper-btn"></div>
+                            <div class="swiper-button-next swiper-btn"></div>
                         </div>
-
-                        <div class="swiper-pagination"></div>
-                    
-                        <div class="swiper-button-prev swiper-btn"></div>
-                        <div class="swiper-button-next swiper-btn"></div>
                     </div>
                 </div>
 
@@ -47,10 +49,14 @@
                 </div>
             </div>
         {% endfor %}
+
+        <div class="modal-wrap">
+            <img src="" alt="image-modal" class="modal">
+        </div>
     </div>
 {% endblock content %}
 
 {% block js %}
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="/static/main/js/gallery.js"></script>
+    <script src="/static/main/js/portfolio.js"></script>
 {% endblock js %}

@@ -63,9 +63,28 @@ function hoverNavigate() {
     createAnim(".swiper-button-next", "50% 0 0 50%", "Right")
 }
 
+function modalImage() {
+    const modalWrap = document.querySelector(".modal-wrap")
+    const modal = document.querySelector(".modal")
+
+    const images = document.querySelectorAll(".gallery-image")
+    images.forEach(image => {
+        image.addEventListener("click", () => {
+            modal.src = image.src
+            modalWrap.classList.add("modal-wrap_show")
+        })
+    })
+
+    modalWrap.addEventListener("click", () => {
+        modal.src = ""
+        modalWrap.classList.remove("modal-wrap_show")
+    })
+}
+
 function initPortfolio() {
     initGallery()
     hoverNavigate()
+    modalImage()
 }
 
 initPortfolio()
