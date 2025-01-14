@@ -40,28 +40,6 @@ main {
     display: flex;
 }
 
-.btn {
-    font-family: "MadeTitle";
-    font-size: 20px;
-    background: transparent;
-    border: var(--color-light) 2px solid;
-    border-radius: 14px;
-    padding: 1.2em 4em;
-    color: var(--color-text);
-    transition: 300ms;
-    cursor: pointer;
-}
-
-.btn:hover {
-    color: var(--color-bg);
-    background-color: var(--color-light);
-}
-
-.btn:active {
-    background-color: var(--color-accent);
-    border-color: var(--color-accent);
-}
-
 .wrap {
     display: flex;
     flex-direction: column;

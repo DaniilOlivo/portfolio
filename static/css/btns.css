@@ -1,0 +1,29 @@
+button {
+    background: transparent;
+    border: none;
+}
+
+.btn {
+    font-family: "MadeTitle";
+    font-size: 20px;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.btn-main {
+    border: var(--color-light) 2px solid;
+    border-radius: 14px;
+    padding: 1.2em 4em;
+    color: var(--color-text);
+}
+
+.btn-main:hover {
+    color: var(--color-bg);
+    background-color: var(--color-light);
+}
+
+.btn-main:active {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
