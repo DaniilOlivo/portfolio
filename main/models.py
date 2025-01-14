@@ -18,7 +18,7 @@ class Image (models.Model):
 
 
 class About (models.Model):
-    text = models.TextField("Текст")
+    text = models.TextField("Текст", max_length=360)
     photo = models.ImageField("Фото", null=True)
     resume = models.FileField("Файл резюме", null=True)
 
@@ -32,7 +32,7 @@ class About (models.Model):
 
 class Project (models.Model):
     title = models.CharField("Название", max_length=120)
-    desc = models.TextField("Описание")
+    desc = models.TextField("Описание", max_length=700)
     images = models.ManyToManyField(Image, verbose_name="Изображения")
     link_github = models.URLField("Ссылка на GitHub", null=True, blank=True)
     link_site = models.URLField("ССылка на сайт", null=True, blank=True)
@@ -61,7 +61,7 @@ class Tech (models.Model):
     title = models.CharField("Название группы", max_length=40)
     image = models.ForeignKey(Image, verbose_name="Изображение", on_delete=models.PROTECT)
     badges = models.ManyToManyField(Badge, verbose_name="Значки технологий")
-    detail = models.TextField("Подробности")
+    detail = models.TextField("Подробности", max_length=250)
 
     def __str__(self):
         return self.title
