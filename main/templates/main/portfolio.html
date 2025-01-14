@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load filters %}
+
 {% block css %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="/static/main/css/portfolio.css">
@@ -15,7 +17,9 @@
                     <div class="project-desc {% cycle 'project-desc_border-right' 'project-desc_border-left' %}">
                         <h2 class="title">{{ project.title }}</h2>
                         <span class="project-desc__line"></span>
-                        <p class="project-desc__text">{{ project.desc }}</p>
+                        {% for desc in project.desc|split:"|" %}
+                            <p class="project-desc__text">{{ desc }}</p>
+                        {% endfor %}
                     </div>
 
                     <div class="gallery {% cycle 'gallery_right' 'gallery_left' %}">

@@ -32,7 +32,7 @@ class About (models.Model):
 
 class Project (models.Model):
     title = models.CharField("Название", max_length=120)
-    desc = models.TextField("Описание", max_length=700)
+    desc = models.TextField("Описание", max_length=700, help_text="Используй |, чтобы создать абзацы")
     images = models.ManyToManyField(Image, verbose_name="Изображения")
     link_github = models.URLField("Ссылка на GitHub", null=True, blank=True)
     link_site = models.URLField("ССылка на сайт", null=True, blank=True)
