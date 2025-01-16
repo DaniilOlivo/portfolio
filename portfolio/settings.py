@@ -18,7 +18,8 @@ import environ
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env(
-    DEBUG=(bool, False)
+    DEBUG=(bool, True),
+    SECRET_KEY=(str, "%o%_h=#8g_c&7mah^k&51t&pzu5psj+b2&7ec^*q!90mzo89qg")
 )
 environ.Env.read_env(BASE_DIR / ".env")
 
