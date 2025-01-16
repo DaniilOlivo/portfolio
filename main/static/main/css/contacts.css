@@ -34,7 +34,6 @@
 
 .contacts-link:hover {
     color: var(--color-accent);
-    text-decoration: underline;
 }
 
 .contacts-link_github {
