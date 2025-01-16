@@ -19,13 +19,9 @@
                             {% endfor %}
                         </div>
                     </div>
-                    <button class="title title_sub btn-detail btn-detail_{% cycle 'right' 'left' %} btn-detail_show">
-                        Подробнее
-                        <img
-                            src="/static/img/arrow_ico.png"
-                            alt="arrow"
-                            class="arrow-link arrow-link_{% cycle '' 'reverse' %}">
-                    </button>
+
+                    {% cycle "false" "true" as reverse silent %}        
+                    {% include "components/btn-arrow.html" with label="Подробнее" reverse=reverse add_class="btn-detail btn-detail_show" %}
                 </div>
 
                 <img
@@ -36,13 +32,9 @@
                 <div class="block block_image-{% cycle 'left' 'right' %} block-detail block-tech block-tech_hide">
                     <h3 class="title title-tech">{{ tech.title }}</h3>
                     <p class="block-tech__detail block-content">{{ tech.detail }}</p>
-                    <button class="title title_sub btn-detail btn-detail_{% cycle 'left' 'right' %} btn-detail_hide">
-                        Скрыть
-                        <img
-                            src="/static/img/arrow_ico.png"
-                            alt="arrow"
-                            class="arrow-link arrow-link_{% cycle 'reverse' '' %}">
-                    </button>
+
+                    {% cycle "true" "false" as reverse silent %}
+                    {% include "components/btn-arrow.html" with label="Скрыть" reverse=reverse add_class="btn-detail btn-detail_hide" %}
                 </div>
             </div>
         {% endfor %}

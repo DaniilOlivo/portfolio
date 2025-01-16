@@ -56,35 +56,10 @@
     opacity: 0;
 }
 
-.btn-detail {
-    border: none;
-    background-color: transparent;
-    color: var(--color-text);
-    align-self: flex-end;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    transition: 300ms;
-}
-
-.btn-detail_right {
+.block_image-right .btn-detail {
     align-self: flex-end;
 }
 
-.btn-detail_left {
+.block_image-left .btn-detail {
     align-self: flex-start;
-    flex-direction: row-reverse;
-}
-
-.btn-detail_right:hover {
-    margin-right: -10px;
-}
-
-.btn-detail_left:hover {
-    margin-left: -12px;
-}
-
-.arrow-link_reverse {
-    transform: rotate(180deg);
 }

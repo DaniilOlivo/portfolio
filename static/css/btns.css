@@ -27,3 +27,103 @@ button {
     border-color: var(--color-accent);
 }
 
+.btn-arrow {
+    position: relative;
+    width: 8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    transition: 300ms;
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-light);
+    border-radius: 40px;
+}
+
+.btn-arrow_forward .circle {
+    left: 0;
+}
+
+.btn-arrow_reverse .circle {
+    right: 0;
+}
+
+.circle__arrow {
+    transition: 300ms;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 18px;
+    height: 2px;
+}
+
+.btn-arrow_forward .circle__arrow {
+    left: 6px;
+}
+
+.btn-arrow_reverse .circle__arrow {
+    right: 6px;
+}
+
+.circle__arrow::before {
+    position: absolute;
+    content: "";
+    top: -4px;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid var(--color-bg);
+    border-right: 2px solid var(--color-bg);
+    
+}
+
+.btn-arrow_forward .circle__arrow::before {
+    right: 1px;
+    transform: rotate(45deg);
+}
+
+.btn-arrow_reverse .circle__arrow::before {
+    left: 1px;
+    transform: rotate(-135deg);
+}
+
+.btn-arrow__text {
+    position: relative;
+    transition: 300ms;
+    color: var(--color-text);
+    text-align: center;
+    z-index: 15;
+}
+
+.btn-arrow_forward .btn-arrow__text {
+    margin-left: 40px;
+}
+
+.btn-arrow_reverse .btn-arrow__text {
+    margin-right: 40px;
+}
+
+.btn-arrow:hover .circle {
+    width: 100%;
+}
+
+.btn-arrow:hover .circle__arrow {
+    background: var(--color-bg);
+}
+
+.btn-arrow_forward:hover .circle__arrow {
+    transform: translate(1em, 0);
+}
+
+.btn-arrow_reverse:hover .circle__arrow {
+    transform: translate(-1em, 0);
+}
+
+.btn-arrow:hover .btn-arrow__text {
+    color: var(--color-bg);
+}
