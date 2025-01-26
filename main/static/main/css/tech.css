@@ -29,12 +29,30 @@
     flex-wrap: wrap;
 }
 
+.badge {
+    font-size: 16px;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.badge__logo {
+    height: 1em;
+}
+
+.badge__label {
+    font-family: monospace;
+}
+
 .block-tech {
     display: flex;
     flex-direction: column;
     gap: 12px;
     width: 550px;
-    height: 240px;
+    height: 260px;
     overflow: hidden;
     padding-top: 20px;
 }

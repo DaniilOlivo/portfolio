@@ -15,7 +15,10 @@
                     <div class="block-content">
                         <div class="badges">
                             {% for badge in tech.badges.all %}
-                                <img src="{{ badge.link }}" alt="{{ badge.title }}" class="badge">
+                                <div class="badge" style="background-color:{{ badge.color }}">
+                                    <img src="{{ badge.logo.url }}" alt="{{ badge.title }}" class="badge__logo">
+                                    <h4 class="badge__label">{{ badge.title }}</h4>
+                                </div>
                             {% endfor %}
                         </div>
                     </div>

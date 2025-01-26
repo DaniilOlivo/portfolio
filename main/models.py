@@ -1,4 +1,5 @@
 from django.db import models
+from colorfield.fields import ColorField
 
 class Image (models.Model):
     title = models.CharField("Название", max_length=256, blank=True)
@@ -47,7 +48,8 @@ class Project (models.Model):
 
 class Badge (models.Model):
     title = models.CharField("Название", max_length=40)
-    link = models.URLField("Ссылка на значок")
+    color = ColorField("Цвет", default="#FFFFFF")
+    logo = models.ImageField("Лого технологии", upload_to="badges", null=True)
 
     def __str__(self):
         return self.title
