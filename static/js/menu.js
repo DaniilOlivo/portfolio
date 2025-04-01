@@ -12,6 +12,14 @@ function initMenu() {
     })
 }
 
+function initMobileMenu() {
+    let mobileBtn = document.querySelector(".btn-mobile-menu")
+    mobileBtn.addEventListener("click", () => {
+        mobileBtn.classList.toggle("btn-mobile-menu_active")
+        document.querySelector(".list-mobile-menu").classList.toggle("list-mobile-menu_active")
+    })
+}
+
 function initAnimate() {
     gsap.to(".top-menu__btn_bookmark", {
         height: 76,
@@ -47,6 +55,7 @@ function hoverGithub() {
  
 function init() {
     initMenu()
+    initMobileMenu()
     initAnimate()
     hoverGithub()
 }

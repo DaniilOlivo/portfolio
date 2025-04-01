@@ -2,12 +2,17 @@
 
 {% block css %}
     <link rel="stylesheet" href="/static/main/css/index.css">
+    <link rel="stylesheet" href="/static/main/css/media/index.css">
 {% endblock css %}
 
 {% block title %}Даниил Киселев - Веб-разработчик{% endblock title %}
 
 {% block content %}
     <div class="index-content">
+        {% if about.photo %}
+            <img src="{{ about.photo.url }}" alt="avatar" class="mobile-image">
+        {% endif %}
+
         <div class="about-title">
             <h1 class="title title_logo about-title__title">
                 Привет, меня зовут <span>Даниил</span>!
@@ -18,8 +23,8 @@
             </h1>
         </div>
 
-        <div class="card">
-            <div class="block block_image-right">
+        <div class="card index-card">
+            <div class="block block_image-right index-block">
                 {{ about.text }}
             </div>
             

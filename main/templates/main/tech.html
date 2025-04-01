@@ -2,6 +2,7 @@
 
 {% block css %}
     <link rel="stylesheet" href="/static/main/css/tech.css">
+    <link rel="stylesheet" href="/static/main/css/media/tech.css">
 {% endblock css %}
 
 {% block title %}Даниил Киселев - Веб-разработчик. Технологии{% endblock title %}
@@ -33,11 +34,16 @@
                     class="card__image card__image_small card__image_{% cycle 'right' 'left' %}">
 
                 <div class="block block_image-{% cycle 'left' 'right' %} block-detail block-tech block-tech_hide">
-                    <h3 class="title title-tech">{{ tech.title }}</h3>
-                    <p class="block-tech__detail block-content">{{ tech.detail }}</p>
+                    <h3 class="title title-tech block-detail__title">{{ tech.title }}</h3>
+                    <p class="block-tech__detail block-content block-content_hide">{{ tech.detail }}</p>
 
                     {% cycle "true" "false" as reverse silent %}
                     {% include "components/btn-arrow.html" with label="Скрыть" reverse=reverse add_class="btn-detail btn-detail_hide" %}
+                    
+                    <div class="btn btn-detail btn-detail-mobile {% cycle '' 'btn-detail-mobile_reverse' %}">
+                        <span class="btn-detail-mobile__label">Подробнее</span>
+                        <span class="btn-detail-mobile__circle"></span>
+                    </div>
                 </div>
             </div>
         {% endfor %}

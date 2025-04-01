@@ -45,6 +45,32 @@ function initTech() {
 
         const btnHide = card.querySelector(selHide)
         btnHide.addEventListener("click", () => tl.reverse())
+
+        let mobileOpen = false
+        const btnMobile = card.querySelector(".btn-detail-mobile")
+
+        const contentDetail = blockDetail.querySelector(selContent)
+        const tlMobile = gsap.timeline()
+        tlMobile.to(contentDetail, {
+            height: "auto",
+            duration: 0.2
+        }).to(contentDetail, {
+            opacity: 1,
+            duration: 0.2
+        }).pause()
+
+        btnMobile.addEventListener("click", () => {
+            if (mobileOpen) {
+                contentDetail.classList.add("block-content_hide")
+                tlMobile.reverse()
+                mobileOpen = false
+            }
+            else {
+                contentDetail.classList.remove("block-content_hide")
+                tlMobile.play()
+                mobileOpen = true
+            }
+        })
     })
 }
 

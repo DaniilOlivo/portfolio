@@ -38,3 +38,7 @@
     transform: translateX(-50%);
     height: 0;
 }
+
+.mobile-menu {
+    display: none;
+}

@@ -1,6 +1,7 @@
 function initGallery() {
     const swiper = new Swiper('.swiper', {
         loop: true,
+        slidesPerView: 'auto',
       
         pagination: {
           el: '.swiper-pagination',

@@ -8,12 +8,28 @@
     <link rel="stylesheet" href="/static/css/btns.css">
     <link rel="stylesheet" href="/static/css/menu.css">
     <link rel="stylesheet" href="/static/css/card.css">
+    <link rel="stylesheet" href="/static/css/media.css">
     {% block css %}{% endblock css %}
     <link rel="shortcut icon" href="/static/ico/favicon.ico" type="image/x-icon">
     <title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
     <div class="wrap">
+        <div class="mobile-menu">
+            <div class="btn-mobile-menu">
+                <span class="btn-mobile-menu__line start"></span>
+                <span class="btn-mobile-menu__line center"></span>
+                <span class="btn-mobile-menu__line end"></span>
+            </div>
+                
+            <ul class="list-mobile-menu">
+                <li><a href="{% url "index" %}" class="title">Главная</a></li>
+                <li><a href="{% url "tech" %}" class="title">Технологии</a></li>
+                <li><a href="{% url "portfolio" %}" class="title">Работы</a></li>
+                <li><a href="{% url "contacts" %}" class="title">Контакты</a></li>
+            </ul>
+        </div>
+
         <nav class="top-menu">
             <span class="top-menu__select">{{ current_page }}</span>
             <a href="{% url "index" %}" class="top-menu__btn title" id="about">Обо мне</a>

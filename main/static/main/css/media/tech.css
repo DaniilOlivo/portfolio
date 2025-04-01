@@ -1,0 +1,144 @@
+@media (max-width: 1150px) {
+    .tech {
+        margin: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .tech {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .card__image_small {
+        width: 140px;
+        height: 140px;
+        position: absolute;
+        top: 35px;
+        margin: 0;
+    }
+
+    .card__image_right {
+        left: 30px;
+    }
+
+    .card__image_left {
+        right: 30px;
+    }
+
+    .block-tech {
+        width: 90vw;
+        height: auto;
+    }
+
+    .block-badges {
+        padding-bottom: 0;
+    }
+
+    .block-detail {
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 0;
+    }
+
+    .block-badges.block_image-right {
+        padding-right: 55px;
+        padding-left: 200px;
+    }
+
+    .block-badges.block_image-left {
+        padding-right: 200px;
+        padding-left: 55px;
+    }
+
+    .btn-detail {
+        display: none;
+    }
+
+    .block-detail__title {
+        display: none;
+    }
+
+    .block-badges {
+        border-radius: 12px 12px 0 0;
+        min-height: 180px;
+
+    }
+
+    .block-detail {
+        opacity: 1;
+        border-radius: 0 0 12px 12px;
+    }
+
+    .block-tech__detail {
+        height: 0;
+    }
+
+    .block-content_hide {
+        display: none;
+    }
+
+    .btn-detail-mobile {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .btn-detail-mobile_reverse {
+        flex-direction: row-reverse;
+    }
+
+    .block_image-right .btn-detail-mobile {
+        align-self: flex-start;
+    }
+    
+    .block_image-left .btn-detail-mobile {
+        align-self: flex-end;
+    }
+
+    .btn-detail-mobile__circle {
+        width: 30px;
+        height: 30px;
+        background-color: var(--color-light);
+        border-radius: 30px;
+        position: relative;
+    }
+
+    .btn-detail-mobile__circle::after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-top: 2px solid var(--color-bg);
+        border-right: 2px solid var(--color-bg);
+        left: calc(50% - 5px);
+        top: calc(50% - 6px);
+        rotate: 135deg;
+    }
+}
+
+@media (max-width: 580px) {
+    .badges {
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .block-badges.block_image-right {
+        padding-left: 160px;
+        padding-right: 10px;
+    }
+
+    .block-badges.block_image-left {
+        padding-right: 160px;
+        padding-left: 10px;
+    }
+
+    .card__image_right {
+        left: 10px;
+    }
+
+    .card__image_left {
+        right: 10px;
+    }
+}

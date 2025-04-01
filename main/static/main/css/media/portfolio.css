@@ -1,0 +1,110 @@
+@media (max-width: 1380px) {
+    .project {
+        margin: 0 30px;
+        width: calc(100% - 60px);
+    }
+
+    .project-info {
+        height: auto;
+    }
+
+    .project-desc {
+        width: 30%;
+        align-self: center;
+    }
+
+    .project-desc_border-right {
+        padding-right: 20px;
+    }
+
+    .project-desc_border-left {
+        padding-left: 20px;
+    }
+
+    .gallery {
+        width: 70%;
+    }
+    
+    .gallery_right {
+        padding-left: 30px;
+    }
+  
+    .gallery_left {
+        padding-right: 30px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .project-info {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .gallery {
+        width: 80%;
+        padding: 0;
+    }
+
+    .project-desc {
+        padding: 0;
+        margin: 35px 0 50px;
+        width: 80%;
+        border: none;
+    }
+
+    .project-desc__text {
+        text-align: left;
+        align-self: flex-start;
+    }
+
+    .project-desc__line {
+        width: 200px;
+    }
+
+    .project-btns {
+        justify-content: center !important;
+    }
+}
+
+@media (max-width: 680px) {
+    .portfolio-content {
+        margin: 100px 0 50px;
+        gap: 120px;
+    }
+
+    .project {
+        margin: 0;
+        width: 100%;
+    }
+
+    .gallery {
+        width: 90%;
+    }
+
+    .project-desc {
+        width: 90%;
+    }
+}
+
+@media (max-width: 620px) {
+    .project-btns {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+    }
+
+    .btn-main {
+        padding: 1em 0;
+        flex-grow: 1;
+    }
+}
+
+@media (max-width: 420px) {
+    .project-desc {
+        width: 100%;
+    }
+
+    .gallery {
+        width: 100%;
+    } 
+}

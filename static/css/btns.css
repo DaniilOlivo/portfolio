@@ -15,6 +15,7 @@ button {
     border-radius: 14px;
     padding: 1.2em 4em;
     color: var(--color-text);
+    text-align: center;
 }
 
 .btn-main:hover {

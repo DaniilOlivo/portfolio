@@ -1,0 +1,115 @@
+@media (max-width: 1700px) {
+    .link-github {
+        position: absolute;
+        right: 40px;
+        top: 20px;
+        bottom: auto;
+    }    
+}
+
+@media (max-width: 1150px) {
+    .top-menu {
+        width: calc(100% - 160px);
+        align-self: flex-start;
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: 720px) {
+    .top-menu__btn {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 680px) {
+    .top-menu {
+        display: none;
+    }
+
+    .wrap {
+        padding: 20px;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+
+    .btn-mobile-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+        z-index: 30;
+    }
+
+    .btn-mobile-menu__line {
+        width: 100%;
+        height: 4px;
+        margin-bottom: 5px;
+        background: var(--color-light);
+        border-radius: 3px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+    }
+
+    .btn-mobile-menu__line.start {
+        transform-origin: 0% 0%;
+    }
+
+    .btn-mobile-menu__line.end {
+        transform-origin: 0% 100%;
+    }
+
+    .btn-mobile-menu_active .btn-mobile-menu__line.start {
+        transform: rotate(45deg) translate(-1px, -1px);
+    }
+
+    .btn-mobile-menu_active .btn-mobile-menu__line.center {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    .btn-mobile-menu_active .btn-mobile-menu__line.end {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    .list-mobile-menu {
+        overflow-x: hidden;
+        padding: 0;
+        list-style-type: none;
+        width: 0;
+        height: 100vh;
+        position: absolute;
+        z-index: 20;
+        top: 0;
+        left: 0;
+        box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.4);
+        padding-top: 125px;
+        background-color: var(--color-bg-additional);
+        transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+
+    .list-mobile-menu li {
+        margin-bottom: 2em;
+        opacity: 0;
+        transition-delay: 1s;
+        transition: 300ms;
+    }
+
+    .list-mobile-menu_active {
+        padding-left: 50px;
+        width: 60vw;
+    }
+
+    .list-mobile-menu_active li {
+        opacity: 1;
+    }
+
+    .link-github {
+        right: 20px;
+    }
+}

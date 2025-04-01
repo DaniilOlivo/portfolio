@@ -1,0 +1,35 @@
+@media (max-width: 1150px) {
+    .top-menu {
+        margin-left: 0;
+        align-self: center;
+    }
+}
+
+@media (max-width: 560px) {
+    .block_contacts {
+        padding-left: 40px;
+        margin: 0 20px;
+        width: calc(100vw - 40px);
+    }
+
+    .cat {
+        align-self: flex-start;
+        margin-left: 40px;
+        width: 270px;
+    }
+
+    .paw {
+        left: 20px;
+        width: 40px;
+    }
+}
+
+@media (max-width: 410px) {
+    .block_contacts {
+        padding-left: 20px;
+    }
+
+    .title_sub {
+        font-size: 18px;
+    }
+}
