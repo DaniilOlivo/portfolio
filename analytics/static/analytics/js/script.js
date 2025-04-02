@@ -23,4 +23,6 @@ function initAnalytics() {
     })
 }
 
-initAnalytics()
+// Temp disabled
+// Because this solution also records crawler visits
+// initAnalytics()
