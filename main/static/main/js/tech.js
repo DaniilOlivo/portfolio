@@ -1,12 +1,13 @@
 class TechCard {
     constructor(cardElement) {
         this.card = cardElement;
-        this.blockBadges = this.card.querySelector('.block-badges');
-        this.blockDetail = this.card.querySelector('.block-detail');
-        this.image = this.card.querySelector('.card__image');
-        this.btnShow = this.card.querySelector('.btn-detail_show');
-        this.btnHide = this.card.querySelector('.btn-detail_hide');
-        this.btnMobile = this.card.querySelector('.btn-detail-mobile');
+        const getEl = (selector) => this.card.querySelector(selector)
+        this.blockBadges = getEl('.block-badges');
+        this.blockDetail = getEl('.block-detail');
+        this.image = getEl('.card__image');
+        this.btnShow = getEl('.btn-detail_show');
+        this.btnHide = getEl('.btn-detail_hide');
+        this.btnMobile = getEl('.btn-detail-mobile');
         
         this.isReverse = this.card.classList.contains('card_reverse');
         this.mobileOpen = false;
