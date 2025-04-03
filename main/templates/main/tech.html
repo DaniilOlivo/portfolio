@@ -10,8 +10,10 @@
 {% block content %}
     <div class="tech-content">
         {% for tech in techs %}
+            {% cycle 'right' 'left' as orientation silent %}
+
             <div class="tech card {% cycle '' 'tech_reverse card_reverse' %}">
-                <div class="block block_image-{% cycle 'right' 'left' %} block-badges block-tech">
+                <div class="block block_image-{{ orientation }} block-badges block-tech">
                     <h3 class="title title-tech">{{ tech.title }}</h3>
                     <div class="block-content">
                         <div class="badges">
@@ -31,11 +33,11 @@
                 <img
                     src="{{ tech.image.file.url }}"
                     alt="{{ tech.image.title }}"
-                    class="card__image card__image_small card__image_{% cycle 'right' 'left' %}">
+                    class="card__image card__image_small card__image_{{ orientation }}">
 
-                <div class="block block_image-{% cycle 'left' 'right' %} block-detail block-tech block-tech_hide">
+                <div class="block block_image-{{ orientation }} block-detail block-tech block-tech_hide">
                     <h3 class="title title-tech block-detail__title">{{ tech.title }}</h3>
-                    <p class="block-tech__detail block-content block-content_hide">{{ tech.detail }}</p>
+                    <p class="block-tech__detail block-content">{{ tech.detail }}</p>
 
                     {% cycle "true" "false" as reverse silent %}
                     {% include "components/btn-arrow.html" with label="Скрыть" reverse=reverse add_class="btn-detail btn-detail_hide" %}

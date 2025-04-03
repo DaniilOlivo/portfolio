@@ -36,10 +36,27 @@
     height: 312px;
 }
 
+.card__image_extra-small {
+    width: 100px;
+    height: 100px;
+}
+
 .card__image_right {
     margin-left: -130px;
 }
 
 .card__image_left {
     margin-right: -130px;
+}
+
+.card__image_mobile {
+    display: none;
+}
+
+.card__image_float-right {
+    float: left;
+}
+
+.card__image_float-left {
+    float: right;
 }

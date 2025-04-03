@@ -68,21 +68,19 @@
     .block-detail {
         opacity: 1;
         border-radius: 0 0 12px 12px;
+        margin-top: 0;
     }
 
     .block-tech__detail {
         height: 0;
     }
 
-    .block-content_hide {
-        display: none;
-    }
-
     .btn-detail-mobile {
         display: flex;
         align-items: center;
         gap: 10px;
-        margin-top: 10px;
+        position: relative;
+        z-index: 10;
     }
 
     .btn-detail-mobile_reverse {
@@ -122,6 +120,7 @@
     .badges {
         justify-content: center;
         gap: 5px;
+        margin-top: 20px;
     }
 
     .block-badges.block_image-right {
@@ -140,5 +139,25 @@
 
     .card__image_left {
         right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .badges {
+        margin-top: 0;
+    }
+
+    .card__image_small {
+        width: 100px;
+        height: 100px;
+        margin-top: 20px;
+    }
+
+    .block-badges.block_image-left {
+        padding-right: 120px;
+    }
+
+    .block-badges.block_image-right {
+        padding-left: 120px;
     }
 }
