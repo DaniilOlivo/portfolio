@@ -1,86 +1,95 @@
-function animateCat() {
-    const selCat = ".cat"
-    const selPaw = ".paw"
-    const selPhone = ".phone-ico"
+class ContactsAnimation {
+    constructor() {
+        this.SELECTORS = {
+            CAT: ".cat",
+            PAW: ".paw", 
+            PHONE: ".phone-ico"
+        }
 
-    let isPhoneFall = false
-    let isPhoneFellForever = false
-    let countFall = 0
-    let cursorHover = false
+        this.isPhoneFall = false;
+        this.isPhoneFellForever = false;
+        this.countFall = 0;
+        this.cursorHover = false;
 
-    const tlInit = gsap.timeline()
-    tlInit.to(selCat, {
-        top: 0,
-        duration: 1,
-        ease: "sine.in"
-    }).to(selPaw, {
-        delay: 1,
-        height: 32,
-        onComplete: () => tlPaw.play()
-    })
+        this.initAnimations();
+        this.setupEventListeners();
+    }
 
-    const tlFallForever = gsap.timeline()
-    tlFallForever.to(selPhone, {
-        delay: 0.5,
-        duration: 1,
-        y: "60vh",
-        ease: "power4.in"
-    }).to(selPaw, {
-        height: 0
-    }).to(selCat, {
-        top: 30,
-        onComplete: () => document.querySelector(selPhone).style.display = "none"
-    }).pause()
+    initAnimations() {
+        this.tlInit = gsap.timeline();
+        this.tlInit.to(this.SELECTORS.CAT, {
+            top: 0,
+            duration: 1,
+            ease: "sine.in"
+        }).to(this.SELECTORS.PAW, {
+            delay: 1,
+            height: 32,
+            onComplete: () => this.tlPaw.play()
+        });
 
+        this.tlFallForever = gsap.timeline();
+        this.tlFallForever.to(this.SELECTORS.PHONE, {
+            delay: 0.5,
+            duration: 1,
+            y: "60vh",
+            ease: "power4.in"
+        }).to(this.SELECTORS.PAW, {
+            height: 0
+        }).to(this.SELECTORS.CAT, {
+            top: 30,
+            onComplete: () => document.querySelector(this.SELECTORS.PHONE).style.display = "none"
+        }).pause();
 
-    const tlPaw = gsap.timeline()
-    tlPaw.to(selPaw, {
-        delay: 1,
-        ease: "circ.in",
-        height: 50
-    }).to(selPhone, {
-        rotation: -45,
-        duration:1.5,
-        ease: "expo.in",
-        onComplete: () => {
-            isPhoneFall = true
-            if (countFall >= 5) {
-                isPhoneFellForever = true
-                tlFallForever.play()
+        this.tlPaw = gsap.timeline();
+        this.tlPaw.to(this.SELECTORS.PAW, {
+            delay: 1,
+            ease: "circ.in",
+            height: 50
+        }).to(this.SELECTORS.PHONE, {
+            rotation: -45,
+            duration:1.5,
+            ease: "expo.in",
+            onComplete: () => {
+                this.isPhoneFall = true;
+                if (this.countFall >= 5) {
+                    this.isPhoneFellForever = true;
+                    this.tlFallForever.play();
+                }
+                this.countFall += 1;
+                this.animBackPhone.restart();
+                this.animBackPhone.pause();
             }
-            countFall += 1
-            animBackPhone.restart()
-            animBackPhone.pause()
-        }
-    }).to(selPaw, {
-        height: 32,
-        ease: "circ.out"
-    }, "<")
-    tlPaw.pause()
+        }).to(this.SELECTORS.PAW, {
+            height: 32,
+            ease: "circ.out"
+        }, "<");
+        this.tlPaw.pause();
 
-    const animBackPhone = gsap.to(selPhone, {
-        paused: true,
-        rotation: 0,
-        onComplete: () => {
-            isPhoneFall = false
-            if (!cursorHover) tlPaw.restart()
-        }
-    })
+        this.animBackPhone = gsap.to(this.SELECTORS.PHONE, {
+            paused: true,
+            rotation: 0,
+            onComplete: () => {
+                this.isPhoneFall = false;
+                if (!this.cursorHover) this.tlPaw.restart();
+            }
+        });
+    }
 
-    let icoPhone = document.querySelector(selPhone)
-    icoPhone.addEventListener("mouseenter", () => {
-        cursorHover = true
-        if (isPhoneFall && !isPhoneFellForever) animBackPhone.play()
-    })
-    icoPhone.addEventListener("mouseleave", () => {
-        cursorHover = false
-        if (!isPhoneFall)
-            tlPaw.restart()
-    })
+    setupEventListeners() {
+        const phoneElement = document.querySelector(this.SELECTORS.PHONE);
+        phoneElement.addEventListener("mouseenter", () => {
+            this.cursorHover = true;
+            if (this.isPhoneFall && !this.isPhoneFellForever) this.animBackPhone.play();
+        });
+        phoneElement.addEventListener("mouseleave", () => {
+            this.cursorHover = false;
+            if (!this.isPhoneFall) this.tlPaw.restart();
+        });
+    }
 }
 
 function initContacts() {
-    animateCat()
+    new ContactsAnimation();
 }
 
-initContacts()
+document.addEventListener('DOMContentLoaded', initContacts);
