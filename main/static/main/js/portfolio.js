@@ -1,91 +1,104 @@
-function initGallery() {
-    const swiper = new Swiper('.swiper', {
-        loop: true,
-        slidesPerView: 'auto',
-      
-        pagination: {
-          el: '.swiper-pagination',
-        },
-      
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-    
-        autoplay: {
-            delay: 5000,
-        },
+class PortfolioGallery {
+    constructor(gallery) {
+        this.gallery = gallery
+        const getEl = (selector) => this.gallery.querySelector(selector)
+        this.btnPrev = getEl(".swiper-button-prev")
+        this.btnNext = getEl(".swiper-button-next")
 
-        speed: 500,
-    
-        effect: 'creative',
-        creativeEffect: {
-            prev: {
-                translate: [0, 0, -400],
+        this.modalWrap = document.querySelector(".modal-wrap");
+        this.modal = document.querySelector(".modal");
+        
+        this.swiperWrapper = getEl(".swiper-wrapper");
+
+        this.initHoverNavigate();
+        this.initModalImage();
+    }
+
+    static initSwiper() {
+        return new Swiper('.swiper', {
+            loop: true,
+            slidesPerView: 'auto',
+          
+            pagination: {
+              el: '.swiper-pagination',
             },
-            next: {
-                translate: ['100%', 0, 0],
+          
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
             },
-        },
-    })
-}
+        
+            autoplay: {
+                delay: 5000,
+            },
 
-function hoverNavigate() {
-    const createAnim = (selector, borderRadius, side) => {
-        const arrEls = document.querySelectorAll(selector)
-        arrEls.forEach((el) => {
-            const tlHover = gsap.timeline();
-            tlHover.to(el, {
-                backgroundColor: "#333533",
-                color: "#CFDBD5",
-                duration: 0.1,
-            }).to(el, {
-                borderRadius,
-                duration: 0.2
-            })
-            tlHover.pause()
+            speed: 500,
+        
+            effect: 'creative',
+            creativeEffect: {
+                prev: {
+                    translate: [0, 0, -400],
+                },
+                next: {
+                    translate: ['100%', 0, 0],
+                },
+            },
+        });
+    }
 
-            el.addEventListener("mouseenter", () => tlHover.play())
-            el.addEventListener("mouseleave", () => tlHover.reverse())
+    createAnim(btn, borderRadius, side) {
+        const tlHover = gsap.timeline({ paused: true });
+        tlHover.to(btn, {
+            backgroundColor: "#333533",
+            color: "#CFDBD5",
+            duration: 0.1,
+        }).to(btn, {
+            borderRadius,
+            duration: 0.2
+        });
 
-            const animClick = gsap.to(el, {
-                color: "#F5CB5C",
-                ["padding" + side]: 20,
-                duration: 0.2,
-                paused: true,
-                onComplete: () => animClick.reverse()
-            })
-    
-            el.addEventListener("click", () => animClick.play())
-        })        
-    }  
+        btn.addEventListener("mouseenter", () => tlHover.play());
+        btn.addEventListener("mouseleave", () => tlHover.reverse());
 
-    createAnim(".swiper-button-prev", "0 50% 50% 0", "Left")
-    createAnim(".swiper-button-next", "50% 0 0 50%", "Right")
-}
+        const animClick = gsap.to(btn, {
+            color: "#F5CB5C",
+            [`padding${side}`]: 20,
+            duration: 0.2,
+            paused: true,
+            onComplete: () => animClick.reverse()
+        });
 
-function modalImage() {
-    const modalWrap = document.querySelector(".modal-wrap")
-    const modal = document.querySelector(".modal")
+        btn.addEventListener("click", () => animClick.play());
+    }
 
-    const images = document.querySelectorAll(".gallery-image")
-    images.forEach(image => {
-        image.addEventListener("click", () => {
-            modal.src = image.src
-            modalWrap.classList.add("modal-wrap_show")
-        })
-    })
+    initHoverNavigate() {
+        this.createAnim(this.btnPrev, "0 50% 50% 0", "Left");
+        this.createAnim(this.btnNext, "50% 0 0 50%", "Right");
+    }
 
-    modalWrap.addEventListener("click", () => {
-        modal.src = ""
-        modalWrap.classList.remove("modal-wrap_show")
-    })
+    initModalImage() {
+        this.swiperWrapper.addEventListener("click", (event) => {
+            const image = event.target.closest(".gallery-image");
+            if (image) {
+                this.modal.src = image.src;
+                this.modalWrap.classList.add("modal-wrap_show");
+            }
+        });
+
+        if (!this.modalWrap._hasClickListener) {
+            this.modalWrap.addEventListener("click", () => {
+                this.modal.src = "";
+                this.modalWrap.classList.remove("modal-wrap_show");
+            });
+            this.modalWrap._hasClickListener = true;
+        }
+    }
 }
 
 function initPortfolio() {
-    initGallery()
-    hoverNavigate()
-    modalImage()
+    const swiper = PortfolioGallery.initSwiper()
+    const arrGallery = document.querySelectorAll(".gallery")
+    arrGallery.forEach(gallery => new PortfolioGallery(gallery))
 }
 
-initPortfolio()
+document.addEventListener('DOMContentLoaded', initPortfolio);
