@@ -1,4 +1,5 @@
 from analytics.models import Visit
+from analytics.utils import is_bot
 
 class HitCountMiddleware:
     def __init__(self, get_response):
@@ -13,7 +14,7 @@ class HitCountMiddleware:
             request.session.create()
             session_key = request.session.session_key
 
-        if not Visit.objects.filter(session=session_key):
+        if not Visit.objects.filter(session=session_key) and is_bot(request):
             vizit = Visit(session=session_key)
             vizit.save()
         
