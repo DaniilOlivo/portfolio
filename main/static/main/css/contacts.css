@@ -32,11 +32,16 @@ main {
 
 .contacts-link {
     flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.contacts-link__text {
     text-align: center;
     transition: 300ms;
 }
 
-.contacts-link:hover {
+.contacts-link__text:hover {
     color: var(--color-accent);
 }
 
