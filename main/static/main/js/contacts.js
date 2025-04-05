@@ -11,6 +11,8 @@ class ContactsAnimation {
         this.countFall = 0;
         this.cursorHover = false;
 
+        this.isMobile = 'ontouchstart' in document.documentElement
+
         this.initAnimations();
         this.setupEventListeners();
     }
@@ -23,7 +25,7 @@ class ContactsAnimation {
             ease: "sine.in"
         }).to(this.SELECTORS.PAW, {
             delay: 1,
-            height: 32,
+            height: this.isMobile ? 20 : 32,
             onComplete: () => this.tlPaw.play()
         });
 
@@ -36,7 +38,7 @@ class ContactsAnimation {
         }).to(this.SELECTORS.PAW, {
             height: 0
         }).to(this.SELECTORS.CAT, {
-            top: 30,
+            top: this.isMobile ? 20 : 30,
             onComplete: () => document.querySelector(this.SELECTORS.PHONE).style.display = "none"
         }).pause();
 
@@ -60,7 +62,7 @@ class ContactsAnimation {
                 this.animBackPhone.pause();
             }
         }).to(this.SELECTORS.PAW, {
-            height: 32,
+            height: this.isMobile ? 20 : 32,
             ease: "circ.out"
         }, "<");
         this.tlPaw.pause();
@@ -77,11 +79,17 @@ class ContactsAnimation {
 
     setupEventListeners() {
         const phoneElement = document.querySelector(this.SELECTORS.PHONE);
-        phoneElement.addEventListener("mouseenter", () => {
+        let eventStart = "mouseenter";
+        let eventEnd = "mouseleave";
+        if (this.isMobile) {
+            eventStart = "touchstart";
+            eventEnd = "touchend";
+        }
+        phoneElement.addEventListener(eventStart, () => {
             this.cursorHover = true;
             if (this.isPhoneFall && !this.isPhoneFellForever) this.animBackPhone.play();
         });
-        phoneElement.addEventListener("mouseleave", () => {
+        phoneElement.addEventListener(eventEnd, () => {
             this.cursorHover = false;
             if (!this.isPhoneFall) this.tlPaw.restart();
         });

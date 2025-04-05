@@ -10,6 +10,8 @@ class PortfolioGallery {
         
         this.swiperWrapper = getEl(".swiper-wrapper");
 
+        this.isMobile = 'ontouchstart' in document.documentElement
+
         this.initHoverNavigate();
         this.initModalImage();
     }
@@ -57,8 +59,10 @@ class PortfolioGallery {
             duration: 0.2
         });
 
-        btn.addEventListener("mouseenter", () => tlHover.play());
-        btn.addEventListener("mouseleave", () => tlHover.reverse());
+        if (!this.isMobile) {
+            btn.addEventListener("mouseenter", () => tlHover.play());
+            btn.addEventListener("mouseleave", () => tlHover.reverse());
+        }
 
         const animClick = gsap.to(btn, {
             color: "#F5CB5C",
