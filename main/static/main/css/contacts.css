@@ -1,3 +1,7 @@
+main {
+    overflow-y: hidden;
+}
+
 .contacts-content {
     flex-grow: 1;
     display: flex;

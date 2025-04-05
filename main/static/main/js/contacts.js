@@ -39,7 +39,6 @@ class ContactsAnimation {
             height: 0
         }).to(this.SELECTORS.CAT, {
             top: this.isMobile ? 20 : 30,
-            onComplete: () => document.querySelector(this.SELECTORS.PHONE).style.display = "none"
         }).pause();
 
         this.tlPaw = gsap.timeline();
