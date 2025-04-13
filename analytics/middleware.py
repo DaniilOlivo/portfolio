@@ -14,7 +14,7 @@ class HitCountMiddleware:
             request.session.create()
             session_key = request.session.session_key
 
-        if not Visit.objects.filter(session=session_key) and is_bot(request):
+        if not Visit.objects.filter(session=session_key) and not is_bot(request):
             vizit = Visit(session=session_key)
             vizit.save()
         

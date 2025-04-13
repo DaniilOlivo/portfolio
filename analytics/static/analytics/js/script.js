@@ -1,8 +1,9 @@
 function initAnalytics() {
     let lastTime = 0
+    let flagSendTime = true
 
     document.addEventListener("visibilitychange", async () => {
-        if (document.hidden) {
+        if (document.hidden && flagSendTime) {
             const currentTime = performance.now()
             const content = {
                 milliseconds: currentTime - lastTime
@@ -19,6 +20,11 @@ function initAnalytics() {
                 },
                 body: JSON.stringify(content)
             })
+
+            const data = await res.json()
+            if (data.status === "denied") {
+                flagSendTime = false
+            }
         }
     })
 }

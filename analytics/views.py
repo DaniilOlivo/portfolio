@@ -16,14 +16,17 @@ months_labels = (
 
 
 def recieve_analytics(request: HttpRequest):
-    visit = Visit.objects.get(session=request.session.session_key)
+    try:
+        visit = Visit.objects.get(session=request.session.session_key)
+    except Visit.DoesNotExist:
+        return JsonResponse({"status": "denied"})
 
     data = json.loads(request.body)
     new_delta = timedelta(milliseconds=int(data["milliseconds"]))
     visit.time_stay += new_delta
     visit.save()
 
-    return HttpResponse("Ok")
+    return JsonResponse({"status": "approved"})
 
 
 class StatsView (View):
