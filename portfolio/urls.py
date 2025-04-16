@@ -17,9 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import handler404
+from portfolio.views import error_404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('analytics/', include('analytics.urls')),
     path("", include("main.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = "portfolio.views.error_404"

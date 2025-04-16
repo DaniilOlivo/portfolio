@@ -16,3 +16,8 @@
 .text-accent {
     font-style: italic;
 }
+
+.title_xl {
+    letter-spacing: 0.1em;
+    font-size: 80px;
+}
