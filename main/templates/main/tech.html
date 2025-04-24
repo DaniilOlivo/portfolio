@@ -19,7 +19,9 @@
                         <div class="badges">
                             {% for badge in tech.badges.all %}
                                 <div class="badge" style="background-color:{{ badge.color }}">
-                                    <img src="{{ badge.logo.url }}" alt="{{ badge.title }}" class="badge__logo">
+                                    {% if badge.logo %}
+                                        <img src="{{ badge.logo.url }}" alt="{{ badge.title }}" class="badge__logo">
+                                    {% endif %}
                                     <h4 class="badge__label">{{ badge.title }}</h4>
                                 </div>
                             {% endfor %}
