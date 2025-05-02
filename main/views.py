@@ -32,6 +32,11 @@ class TechView (PageMixin, ListView):
     model = Tech
     context_object_name = "techs"
 
+    def get_queryset(self):
+        techs = super().get_queryset()
+        sorted_techs = techs.order_by("position")
+        return sorted_techs
+
 
 class PortfolioView (PageMixin, ListView):
     template_name = "main/portfolio.html"

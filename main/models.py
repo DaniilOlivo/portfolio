@@ -60,6 +60,7 @@ class Badge (models.Model):
 
 
 class Tech (models.Model):
+    position = models.IntegerField("Позиция", unique=True, null=True)
     title = models.CharField("Название группы", max_length=40)
     image = models.ForeignKey(Image, verbose_name="Изображение", on_delete=models.PROTECT)
     badges = models.ManyToManyField(Badge, verbose_name="Значки технологий")
