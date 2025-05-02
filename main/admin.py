@@ -5,4 +5,8 @@ admin.site.register(About)
 admin.site.register(Image)
 admin.site.register(Project)
 admin.site.register(Badge)
-admin.site.register(Tech)
+
+@admin.register(Tech)
+class TechAdmin (admin.ModelAdmin):
+    list_display = ("title", "position",)
+    ordering = ("position",)
