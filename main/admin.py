@@ -3,10 +3,16 @@ from main.models import About, Image, Project, Badge, Tech
 
 admin.site.register(About)
 admin.site.register(Image)
-admin.site.register(Project)
 admin.site.register(Badge)
 
-@admin.register(Tech)
-class TechAdmin (admin.ModelAdmin):
+class PositionAdminMixin:
     list_display = ("title", "position",)
     ordering = ("position",)
+
+@admin.register(Project)
+class TechAdmin (PositionAdminMixin, admin.ModelAdmin):
+    pass
+
+@admin.register(Tech)
+class TechAdmin (PositionAdminMixin, admin.ModelAdmin):
+    pass

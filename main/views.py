@@ -11,6 +11,13 @@ class PageMixin:
         return context
     
 
+class OrderListMixin:
+    def get_queryset(self):
+        list_objects = super().get_queryset()
+        sorted_list = list_objects.order_by("position")
+        return sorted_list
+
+
 class IndexView (PageMixin, TemplateView):
     template_name = "main/index.html"
     id_page = "about"
@@ -26,19 +33,14 @@ class IndexView (PageMixin, TemplateView):
         return context
 
 
-class TechView (PageMixin, ListView):
+class TechView (OrderListMixin, PageMixin, ListView):
     template_name = "main/tech.html"
     id_page = "tech"
     model = Tech
     context_object_name = "techs"
 
-    def get_queryset(self):
-        techs = super().get_queryset()
-        sorted_techs = techs.order_by("position")
-        return sorted_techs
 
-
-class PortfolioView (PageMixin, ListView):
+class PortfolioView (OrderListMixin, PageMixin, ListView):
     template_name = "main/portfolio.html"
     id_page = "portfolio"
     model = Project

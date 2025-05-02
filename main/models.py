@@ -32,6 +32,7 @@ class About (models.Model):
 
 
 class Project (models.Model):
+    position = models.IntegerField("Позиция", unique=True, null=True)
     title = models.CharField("Название", max_length=120)
     desc = models.TextField("Описание", max_length=700, help_text="Используй |, чтобы создать абзацы")
     images = models.ManyToManyField(Image, verbose_name="Изображения")
