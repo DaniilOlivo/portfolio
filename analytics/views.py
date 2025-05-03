@@ -1,8 +1,9 @@
 from analytics.models import Visit
 from django.db.models import Avg, Count, QuerySet
-from django.db.models.functions import TruncMonth, TruncYear, TruncDay, Trunc
+from django.db.models.functions import Trunc
 from django.views.generic import TemplateView, View
-from django.http import HttpRequest, HttpResponse, JsonResponse
+from django.http import HttpRequest, JsonResponse
+from django.contrib.auth.mixins import LoginRequiredMixin
 import json
 from datetime import datetime, timedelta
 
@@ -136,6 +137,6 @@ class StatsView (View):
         return JsonResponse(self.response_data)
 
 
-class DashboardView (TemplateView):
+class DashboardView (LoginRequiredMixin, TemplateView):
     template_name = "analytics/dashboard.html"
     
