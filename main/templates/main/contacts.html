@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 
+{% load solo_tags %}
+{% load contacts %}
+
 {% block css %}
     <link rel="stylesheet" href="/static/main/css/contacts.css">
     <link rel="stylesheet" href="/static/main/css/media/contacts.css">
@@ -8,6 +11,8 @@
 {% block title %}Даниил Киселев - Веб-разработчик. Контакты{% endblock title %}
 
 {% block content %}
+    {% get_solo 'main.Contacts' as contacts %}
+
     <div class="contacts-content">
         <img src="/static/main/img/cat.png" alt="cat" class="cat">
 
@@ -15,8 +20,8 @@
             <div class="block-row">
                 <img src="/static/main/img/phone_ico.png" alt="phone" class="contacts-ico phone-ico">
                 <div class="contacts-link">
-                    <a href="tel:+79152354981" class="contacts-link__text title title_sub">
-                        +7 915 235 49 81
+                    <a href="tel:{{ contacts.phone }}" class="contacts-link__text title title_sub">
+                        {% phone_label contacts.phone %}
                     </a>
                 </div>
             </div>
@@ -24,8 +29,8 @@
             <div class="block-row">
                 <img src="/static/main/img/mail_ico.png" alt="mail" class="contacts-ico">
                 <div class="contacts-link">
-                    <a href="mailto:kiselev.daniil.web@gmail.com" class="contacts-link__text title title_sub">
-                        kiselev.daniil.web@gmail.com
+                    <a href="mailto:{{ contacts.email }}" class="contacts-link__text title title_sub">
+                        {{ contacts.email }}
                     </a>
                 </div>
             </div>
@@ -33,10 +38,10 @@
             <div class="block-row">
                 <img src="/static/img/github_ico.png" alt="github" class="contacts-ico">
                 <div class="contacts-link">
-                    <a href="https://github.com/DaniilOlivo"
+                    <a href="{{ contacts.github_url }}"
                         class="contacts-link__text title title_sub"
                         target="_blank">
-                        DaniilOlivo
+                        {% get_username_github contacts.github_url %}
                     </a>
                 </div>
             </div>

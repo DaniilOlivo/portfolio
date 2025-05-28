@@ -1,8 +1,9 @@
 from django.contrib import admin
-from main.models import About, Image, Project, Badge, Tech
+from main.models import About, Image, Project, Badge, Tech, Contacts
 from solo.admin import SingletonModelAdmin
 
 admin.site.register(About, SingletonModelAdmin)
+admin.site.register(Contacts, SingletonModelAdmin)
 admin.site.register(Image)
 admin.site.register(Badge)
 

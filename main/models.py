@@ -73,3 +73,16 @@ class Tech (models.Model):
     class Meta:
         verbose_name = "Блок технологий"
         verbose_name_plural = "Блоки технологий"
+
+
+class Contacts (SingletonModel):
+    # To keep things simple, I'll just use string for the phone
+    phone = models.CharField("Телефон", max_length=12)
+    email = models.EmailField("Почта")
+    github_url = models.URLField("Ссылка на GitHub")
+
+    def __str__(self):
+        return "Контактная информация"
+
+    class Meta:
+        verbose_name = "Контактная информация"
