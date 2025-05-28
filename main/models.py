@@ -1,5 +1,6 @@
 from django.db import models
 from colorfield.fields import ColorField
+from solo.models import SingletonModel
 
 class Image (models.Model):
     title = models.CharField("Название", max_length=256, blank=True)
@@ -18,17 +19,16 @@ class Image (models.Model):
         return super().save()
 
 
-class About (models.Model):
+class About (SingletonModel):
     text = models.TextField("Текст", max_length=360)
     photo = models.ImageField("Фото", null=True)
     resume = models.FileField("Файл резюме", null=True)
 
     def __str__(self):
-        return "Блок"
+        return "Блок 'Обо мне'"
 
     class Meta:
         verbose_name = "Блок 'Обо мне'"
-        verbose_name_plural = "Блок 'Обо мне'"
 
 
 class Project (models.Model):

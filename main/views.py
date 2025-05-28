@@ -22,16 +22,6 @@ class IndexView (PageMixin, TemplateView):
     template_name = "main/index.html"
     id_page = "about"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        records_db = About.objects.all()
-        # Объект по умолчанию
-        about = About(text="Какой же я классный")
-        if (records_db):
-            about = records_db[0]
-        context["about"] = about
-        return context
-
 
 class TechView (OrderListMixin, PageMixin, ListView):
     template_name = "main/tech.html"

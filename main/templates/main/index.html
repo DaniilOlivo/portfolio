@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load solo_tags %}
+
 {% block css %}
     <link rel="stylesheet" href="/static/main/css/index.css">
     <link rel="stylesheet" href="/static/main/css/media/index.css">
@@ -8,6 +10,8 @@
 {% block title %}Даниил Киселев - Веб-разработчик{% endblock title %}
 
 {% block content %}
+    {% get_solo 'main.About' as about %}
+
     <div class="index-content">
         {% if about.photo %}
             <img src="{{ about.photo.url }}" alt="avatar" class="mobile-image">
